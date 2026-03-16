@@ -809,7 +809,10 @@ function answerQ(i) {
   }
   
   const qActions = document.getElementById('q-actions');
-  if (qActions) qActions.style.display = 'flex';
+  if (qActions) {
+    qActions.style.display = 'flex';
+    scrollToQuizActionsIfLandscape();
+  }
 }
 
 function nextQuestion() {
@@ -839,6 +842,23 @@ function scrollToQuizQuestionTop() {
   window.scrollTo({
     top: Math.max(0, top),
     behavior: 'auto'
+  });
+}
+
+function scrollToQuizActionsIfLandscape() {
+  const isLandscape = window.innerWidth > window.innerHeight;
+  const isMobileLike = Math.min(window.innerWidth, window.innerHeight) <= 820;
+  if (!isLandscape || !isMobileLike) return;
+
+  const actions = document.getElementById('q-actions');
+  if (!actions) return;
+
+  requestAnimationFrame(function () {
+    const bottomPadding = 18;
+    const top = window.pageYOffset + actions.getBoundingClientRect().bottom - window.innerHeight + bottomPadding;
+    if (top > window.pageYOffset) {
+      window.scrollTo({ top: top, behavior: 'auto' });
+    }
   });
 }
 
@@ -1163,6 +1183,8 @@ function initSidebarToggle() {
 
   window.removeEventListener('resize', placeSidebarToggle);
   window.addEventListener('resize', placeSidebarToggle);
+  window.removeEventListener('scroll', placeSidebarToggle);
+  window.addEventListener('scroll', placeSidebarToggle, { passive: true });
 }
 
 function toggleSidebar() {
@@ -1181,11 +1203,12 @@ function placeSidebarToggle() {
   if (!sidebar || !btn) return;
 
   btn.style.position = 'fixed';
-  btn.style.top = '50%';
+  btn.style.top = (typeof CSS !== 'undefined' && CSS.supports && CSS.supports('top', '50svh')) ? '50svh' : '50%';
   btn.style.transform = 'translateY(-50%)';
 
   var collapsed = sidebar.classList.contains('collapsed');
-  btn.style.left = collapsed ? '0px' : Math.round(sidebar.getBoundingClientRect().width) + 'px';
+  var rect = sidebar.getBoundingClientRect();
+  btn.style.left = collapsed ? '0px' : Math.max(0, Math.round(rect.right)) + 'px';
 }
 
 function injectModuleMobileFixes() {
