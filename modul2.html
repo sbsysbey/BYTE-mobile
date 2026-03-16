@@ -1,0 +1,744 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1e2d4a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BYTE Academy">
+<link rel="apple-touch-icon" href="/videos/byte1.png">
+<title>BYTE Academy — Modül 2: Ağ Güvenliği</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/modules.css">
+
+<style>
+/* STEP 2: Reading */
+.reading-grid{display:grid;grid-template-columns:1fr 330px;gap:20px;align-items:start;}
+.article-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;}
+.article-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(96,200,240,.07);border:1px solid rgba(96,200,240,.25);border-radius:20px;padding:4px 10px;font-family:'Orbitron',sans-serif;font-size:.7rem;color:var(--cyan);letter-spacing:1px;margin-bottom:12px;}
+.article-title{font-family:'Orbitron',sans-serif;font-size:1rem;color:#fff;margin-bottom:14px;}
+.article-body{font-size:.91rem;line-height:1.8;color:var(--text);}
+.article-body p{margin-bottom:12px;}
+.section-head{font-family:'Orbitron',sans-serif;font-size:.77rem;color:var(--cyan);letter-spacing:2px;margin:24px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+
+/* Modul 2 specific reading blocks */
+.mitm-diagram{background:var(--bg-panel);border:1px solid var(--border);border-radius:12px;padding:16px;margin:14px 0;}
+.mitm-title{font-family:'Orbitron',sans-serif;font-size:.75rem;color:var(--yellow);letter-spacing:1px;margin-bottom:12px;}
+.mitm-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;}
+.mitm-node{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px;text-align:center;}
+.mitm-node.attacker{border-color:rgba(248,113,113,.35);background:rgba(248,113,113,.08);}
+.mitm-node-icon{font-size:1.2rem;margin-bottom:4px;}
+.mitm-node-name{font-size:.84rem;font-weight:700;color:#fff;}
+.mitm-node-label{font-size:.75rem;color:var(--text-dim);}
+.mitm-arrow{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:90px;}
+.mitm-line{width:100%;height:2px;background:linear-gradient(90deg,var(--cyan),var(--red));}
+.mitm-intercept{font-size:.66rem;color:var(--text-dim);text-align:center;line-height:1.3;}
+
+.rule-cards{display:flex;flex-direction:column;gap:10px;margin:14px 0;}
+.rule-card{background:var(--bg-panel);border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:10px;padding:13px 14px;display:flex;gap:12px;align-items:flex-start;}
+.rule-card.danger{border-left-color:var(--red);}
+.rule-card.warn{border-left-color:var(--yellow);}
+.rule-card.tip{border-left-color:var(--green);}
+.rc-icon{font-size:1.15rem;flex-shrink:0;}
+.rc-title{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:3px;}
+.rc-desc{font-size:.84rem;color:var(--text-dim);line-height:1.55;}
+
+.dont-section{background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.24);border-radius:12px;padding:14px 16px;margin-top:16px;}
+.dont-title{font-family:'Orbitron',sans-serif;font-size:.73rem;color:var(--red);letter-spacing:1px;margin-bottom:10px;}
+.dont-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;}
+.dont-list li{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;color:var(--text-dim);line-height:1.45;}
+.dont-x{color:var(--red);font-weight:700;}
+.do-check{color:var(--green);font-weight:700;}
+
+.reading-sidebar{display:flex;flex-direction:column;gap:14px;}
+.side-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px;}
+.side-title{font-family:'Orbitron',sans-serif;font-size:.81rem;color:var(--cyan);letter-spacing:2px;margin-bottom:12px;}
+
+.vpn-table{width:100%;border-collapse:collapse;font-size:.84rem;}
+.vpn-table th{font-family:'Orbitron',sans-serif;font-size:.66rem;letter-spacing:1px;color:var(--text-dim);padding:6px;border-bottom:1px solid var(--border);text-align:left;}
+.vpn-table td{padding:7px 6px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--text);}
+.vpn-name{font-weight:600;color:#fff;}
+.tag-paid,.tag-free,.tag-danger{display:inline-block;font-size:.68rem;padding:2px 7px;border-radius:4px;border:1px solid;}
+.tag-paid{color:var(--yellow);background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.28);}
+.tag-free{color:var(--green);background:rgba(74,222,154,.1);border-color:rgba(74,222,154,.28);}
+.tag-danger{color:var(--red);background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.28);}
+.check{color:var(--green);font-weight:700;}
+.cross{color:var(--red);font-weight:700;}
+
+.byte-tip-card{background:linear-gradient(135deg,rgba(74,222,154,.04),rgba(96,200,240,.03));border:1px solid rgba(74,222,154,.2);border-radius:12px;padding:16px 20px;margin-top:20px;}
+.byte-tip-head{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+.byte-mini{width:34px;height:34px;border-radius:8px;background:var(--bg-panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;overflow:hidden;}
+.byte-mini img{width:100%;height:100%;object-fit:cover;}
+.byte-name{font-family:'Orbitron',sans-serif;font-size:.84rem;color:var(--green);letter-spacing:1px;}
+.byte-tip-text{font-size:.87rem;color:var(--text);line-height:1.6;font-style:italic;}
+
+/* STEP 3: Quiz */
+.quiz-wrap{max-width:680px;}
+.quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:7px;overflow:hidden;border:1px solid var(--border);}
+.quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--green));border-radius:50px;transition:width .6s ease;}
+.quiz-prog-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:18px;font-family:'Orbitron',sans-serif;}
+.question-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:16px;}
+.question-num{font-family:'Orbitron',sans-serif;font-size:.81rem;color:var(--cyan);letter-spacing:2px;margin-bottom:10px;}
+.question-text{font-size:.95rem;color:#fff;font-weight:600;line-height:1.5;margin-bottom:18px;}
+.options{display:flex;flex-direction:column;gap:9px;}
+.option-btn{background:var(--bg-panel);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:13px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:.2s;text-align:left;width:100%;color:var(--text-dim);font-size:.91rem;font-family:'Exo 2',sans-serif;}
+.option-btn:hover{background:rgba(96,200,240,.05);border-color:rgba(96,200,240,.25);color:#fff;}
+.option-btn.correct{background:rgba(74,222,154,.09);border-color:var(--green);color:var(--green);}
+.option-btn.wrong{background:rgba(248,113,113,.09);border-color:var(--red);color:var(--red);}
+.option-btn:disabled{cursor:default;}
+.option-letter{width:24px;height:24px;border-radius:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:.68rem;font-weight:700;flex-shrink:0;transition:.2s;}
+.option-btn.correct .option-letter{background:rgba(74,222,154,.18);border-color:var(--green);color:var(--green);}
+.option-btn.wrong .option-letter{background:rgba(248,113,113,.18);border-color:var(--red);color:var(--red);}
+.feedback-box{border-radius:9px;padding:11px 15px;font-size:.87rem;line-height:1.5;margin-top:11px;display:none;}
+.feedback-box.correct{background:rgba(74,222,154,.07);border:1px solid rgba(74,222,154,.25);color:var(--green);}
+.feedback-box.wrong{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.25);color:var(--red);}
+.feedback-box.show{display:block;animation:fadeUp .3s ease;}
+.quiz-actions{display:flex;justify-content:flex-end;}
+
+/* STEP 4 feedback */
+.byte-fb{display:none;margin-top:18px;background:rgba(74,222,154,.04);border:1px solid rgba(74,222,154,.2);border-radius:12px;padding:16px;gap:12px;}
+.byte-fb.show{display:block;}
+
+/* STEP 4: Scenario */
+.scene-head{display:flex;gap:14px;align-items:flex-start;padding:16px;border-bottom:1px solid var(--border);}
+.scene-byte{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(96,200,240,.1);border:1px solid rgba(96,200,240,.3);font-size:1.2rem;flex-shrink:0;}
+.scene-title{font-family:'Orbitron',sans-serif;font-size:.82rem;color:var(--cyan);letter-spacing:1px;margin-bottom:6px;}
+.scene-text{font-size:.86rem;color:var(--text-dim);line-height:1.55;}
+.scene-body{padding:16px;}
+.scene-q{font-size:.92rem;color:#fff;font-weight:700;margin-bottom:12px;}
+.scene-opts{display:flex;flex-direction:column;gap:10px;}
+.scene-opt{background:var(--bg-panel);border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;transition:.2s;}
+.scene-opt:hover{border-color:rgba(96,200,240,.35);background:rgba(96,200,240,.05);}
+.scene-opt.chosen-correct{border-color:var(--green);background:rgba(74,222,154,.1);}
+.scene-opt.chosen-wrong{border-color:var(--red);background:rgba(248,113,113,.08);}
+.s-icon{font-size:1.05rem;line-height:1.2;flex-shrink:0;}
+.s-text{font-size:.86rem;color:var(--text);line-height:1.5;}
+.wifi-popup{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 12px;margin-top:10px;}
+.wp-title{font-family:'Orbitron',sans-serif;font-size:.68rem;color:var(--text-dim);letter-spacing:1px;margin-bottom:8px;}
+.wifi-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.wifi-item{display:flex;justify-content:space-between;gap:10px;align-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;}
+.wifi-item.danger{border-color:rgba(248,113,113,.3);}
+.wifi-name{font-size:.82rem;color:#fff;font-weight:600;}
+.wifi-signal{font-size:.72rem;color:var(--text-dim);}
+.wifi-danger-tag,.wifi-safe-tag{font-size:.65rem;font-family:'Orbitron',sans-serif;letter-spacing:.5px;padding:3px 7px;border-radius:5px;border:1px solid;white-space:nowrap;}
+.wifi-danger-tag{color:var(--red);background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.3);}
+.wifi-safe-tag{color:var(--green);background:rgba(74,222,154,.1);border-color:rgba(74,222,154,.3);}
+
+@media (max-width:1024px){
+  .reading-grid{grid-template-columns:1fr;}
+  .mitm-flow{grid-template-columns:1fr;}
+  .mitm-arrow{min-width:auto;}
+  .mitm-line{height:18px;width:2px;background:linear-gradient(180deg,var(--cyan),var(--red));}
+}
+</style>
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar">
+  <div class="logo">BYTE<span>ACADEMY</span></div>
+  <div class="topbar-right">
+    <a class="back-btn" href="index.html">&#8592; Dashboard</a>
+    <div class="xp-wrap">
+      <span>⚡</span>
+      <span class="xp-label">XP</span>
+      <span id="xp-count">1170</span>
+      <div class="xp-bar-mini"><div class="xp-bar-fill" id="xp-fill" style="width:34%"></div></div>
+
+    </div>
+    <div class="mod-badge-top">🏅 <span id="badge-count">3</span> Rozet</div>
+  </div>
+</div>
+
+<div id="app">
+  <!-- SIDEBAR -->
+    <aside id="sidebar">
+    <div style="padding:0 8px 6px;">
+      <div class="sidebar-title">Modüller</div>
+      <div class="module-item" onclick="goTo('modul1.html')"><div class="mod-num done">01</div><div><div class="mod-name">Şifre Güvenliği</div><div class="mod-meta">&#x2713; Tamamland&#x131;</div></div></div>
+
+      
+      <div class="module-item active">
+        <div class="mod-num active2">02</div>
+        <div><div class="mod-name" style="color:var(--cyan)">Ağ Güvenliği</div><div class="mod-meta">Aktif &middot; 450 XP</div></div>
+      </div>
+      <div class="sidebar-divider"></div>
+      
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">03</div><div><div class="mod-name">Mobil Güvenlik</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">04</div><div><div class="mod-name">Sosyal Mühendislik</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">05</div><div><div class="mod-name">Phishing & Zararlı Yazılımlar</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+
+
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">06</div><div><div class="mod-name">Veri Gizliliği & Bulut</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">07</div><div><div class="mod-name">Sunum Güvenliği</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">08</div><div><div class="mod-name">Güvenli İletişim</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">09</div><div><div class="mod-name">Hesap & Platform Güvenliği</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">10</div><div><div class="mod-name">Seyahat Güvenliği</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">11</div><div><div class="mod-name">Yapay Zeka Güvenliği</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">12</div><div><div class="mod-name">Sosyal Medya Güvenliği</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="module-item" onclick="tryNav()"><div class="mod-num locked">13</div><div><div class="mod-name">Siber Zorbalık</div><div class="mod-meta">Kilitli &middot; 400 XP</div></div></div>
+      <div class="sidebar-divider"></div>
+      <div class="module-item" onclick="goTo('rehber.html')" style="opacity:.85">
+        <div class="mod-num" style="background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:var(--yellow);font-size:.6rem;">&#x1F4CB;</div>
+        <div><div class="mod-name" style="color:var(--yellow)">H&#x131;zl&#x131; Rehber</div><div class="mod-meta">&#xD6;zet &middot; Cheat Sheet</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+ <main id="main">
+    <!-- MODULE HEADER -->
+    <div class="mod-header">
+      <div class="byte-avatar" id="byteAvatar" onclick="byteSpeak()" title="">
+        🔐
+        <div class="byte-rings">
+          <div class="byte-ring"></div>
+          <div class="byte-ring"></div>
+          <div class="byte-ring"></div>
+        </div>
+        <div class="byte-tooltip">🔊 Tıkla &amp; Dinle</div>
+      </div>
+      <div class="mod-title-block">
+        <div class="mod-tag" onclick="byteSpeak()" title="Tıkla ve dinle">◆ MODÜL 02 <span style="font-family:'Segoe UI Emoji','Noto Color Emoji',sans-serif">🔊</span></div>
+        <h1 class="mod-title">Ağ      <span>Güvenliği</span></h1>
+        <p class="mod-desc">Açık Wi-Fi tehlikeleri, MITM saldırıları, VPN kullanımı ve kurumsal ağ güvenliği. Bağlanmadan önce iki kez düşün!</p>
+        <div class="mod-stats">
+          <div class="stat-chip"><div class="dot dot-g"></div>5 Adım</div>
+          <div class="stat-chip"><div class="dot dot-y"></div>450 XP</div>
+          <div class="stat-chip"><div class="dot dot-c"></div>~25 Dakika</div>
+        </div>
+      </div>
+    </div>
+    <!-- STEP NAV -->
+    <div class="step-nav">
+      <div class="step-btn active" id="step-btn-1" onclick="goStep(1)">
+        <div class="step-dot active" id="dot-1">01</div>
+        <div class="step-label">Video Ders</div><div class="step-xp">+50 XP</div>
+      </div>
+      <div class="step-btn" id="step-btn-2" onclick="goStep(2)">
+        <div class="step-dot pending" id="dot-2">02</div>
+        <div class="step-label">Okuma</div><div class="step-xp">+60 XP</div>
+      </div>
+      <div class="step-btn" id="step-btn-3" onclick="goStep(3)">
+        <div class="step-dot pending" id="dot-3">03</div>
+        <div class="step-label">Quiz</div><div class="step-xp">+100 XP</div>
+      </div>
+      <div class="step-btn" id="step-btn-4" onclick="goStep(4)">
+        <div class="step-dot pending" id="dot-4">04</div>
+        <div class="step-label">Senaryo</div><div class="step-xp">+100 XP</div>
+      </div>
+      <div class="step-btn" id="step-btn-5" onclick="goStep(5)">
+        <div class="step-dot pending" id="dot-5">05</div>
+        <div class="step-label">Rozet</div><div class="step-xp">+40 XP</div>
+      </div>
+    </div>
+
+    <!-- ══ ADIM 1: VİDEO ══ -->
+       <!-- ══ STEP 1: VIDEO ══════════════════ -->
+    <div class="lesson-panel active" id="panel-1">
+      <div class="video-player">
+        <div class="video-screen" onclick="togglePlay()">
+          <div class="vs-label">BYTE ACADEMY — MODÜL 02</div>
+          <div class="vs-title">Ağ Güvenliği: Bağlanmadan Önce Düşün</div>
+          <div class="vs-sub">Açık Wi-Fi · MITM · VPN · WPA2 · Hotspot Tehlikeleri</div>
+          <div class="play-big" id="play-btn">▶</div>
+          <div class="chapters">
+            <div class="ch-pill active" onclick="event.stopPropagation();setChapter(this,'Giriş & İstatistikler','0:00')">Giriş</div>
+            <div class="ch-pill" onclick="event.stopPropagation();setChapter(this,'Güçlü Şifre Nasıl?','3:10')">Kamusal Ağlar</div>
+            <div class="ch-pill" onclick="event.stopPropagation();setChapter(this,'2FA Rehberi','6:40')">Hotspot</div>
+            <div class="ch-pill" onclick="event.stopPropagation();setChapter(this,'Şifre Yöneticileri','9:20')">Modem</div>
+            <div class="ch-pill" onclick="event.stopPropagation();setChapter(this,'Özet & Eylem Adımları','12:00')">Özet</div>
+          </div>
+        </div>
+        <div class="video-controls">
+          <button class="ctrl-btn primary" id="play-ctrl" onclick="togglePlay()">▶ Oynat</button>
+          <button class="ctrl-btn" onclick="seekBack()">↩ 10s</button>
+          <div class="progress-track" onclick="seekTo(event)">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="vtime" id="video-time">0:00 / 14:35</div>
+          <button class="ctrl-btn">⚙</button>
+        </div>
+      </div>
+
+    <div class="key-points">
+        <div class="kp-head"><span>🔑</span><span class="kp-title">Ders Öncesi Anahtar Noktalar</span></div>
+        <ul class="kp-list">
+          <li><span class="kp-b">▸</span>Kurumsal hesaplara özel cihazdan bağlan. <strong style="color:var(--accent)">Bu cihazı havalimanı, kafe, tren gibi açık alanlarda asla Wi-Fi'ye bağlama.</strong></li>
+
+           <li><span class="kp-b">▸</span>Manipüle edilmiş hotspot'lar üzerinden cihazına başkaları bağlanabilir — hesabın ele geçirilir.</li>
+          <li><span class="kp-b">▸</span>Bluetooth ve WLAN kullanmıyorsan <strong style="color:var(--accent)">kapalı olmalı</strong>, yalnızca kullanırken aç.</li>
+          <li><span class="kp-b">▸</span>Güvenilir VPN kullan. Demo, ücretsiz veya güvenliğinden emin olmadığın VPN kullanma.</li>
+          <li><span class="kp-b">▸</span>Zorunlu açık ağlarda dahi hassas işlemler için VPN şart. <strong style="color:var(--red)">Gerekmedikçe ücretsiz Wi-Fi kullanma!</strong></li>
+        </ul>
+      </div>
+      <div style="text-align:right">
+        <button class="btn btn-primary" onclick="window.completeStep && window.completeStep(1)">Videoyu Tamamladım →</button>
+      </div>
+    </div>
+
+
+    <!-- ══ ADIM 2: OKUMA ══ -->
+    <div class="lesson-panel" id="panel-2">
+      <div class="reading-grid">
+        <div class="article-card">
+          <div class="article-tag">📖 OKUMA MATERYALİ</div>
+          <h2 class="article-title">Ağ Güvenliği: Bağlantı Kurmadan Önce Bilmen Gerekenler</h2>
+          <div class="article-body">
+
+            <div class="section-head">🎯 MITM SALDIRISI NEDİR?</div>
+            <p>Man-in-the-Middle (MITM) saldırısında saldırgan, <strong>senin ile sunucu arasına gizlice girer.</strong> Tüm trafiğini okur, değiştirir veya kaydeder. Fark etmezsin.</p>
+
+            <div class="mitm-diagram">
+              <div class="mitm-title">⚠️ MITM NASIL ÇALIŞIR?</div>
+              <div class="mitm-flow">
+                <div class="mitm-node">
+                  <div class="mitm-node-icon">💻</div>
+                  <div class="mitm-node-name">Sen</div>
+                  <div class="mitm-node-label">Kurban</div>
+                </div>
+                <div class="mitm-arrow">
+                  <div class="mitm-line"></div>
+                  <div class="mitm-intercept">şifreli zannediyorsun</div>
+                </div>
+                <div class="mitm-node attacker">
+                  <div class="mitm-node-icon">😈</div>
+                  <div class="mitm-node-name">Saldırgan</div>
+                  <div class="mitm-node-label">Araya girdi</div>
+                </div>
+                <div class="mitm-arrow">
+                  <div class="mitm-line"></div>
+                  <div class="mitm-intercept">her şeyi okuyor</div>
+                </div>
+                <div class="mitm-node">
+                  <div class="mitm-node-icon">🌐</div>
+                  <div class="mitm-node-name">Sunucu</div>
+                  <div class="mitm-node-label">Banka / Site</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-head">📡 AÇIK WI-FI & MANİPÜLE EDİLMİŞ HOTSPOT</div>
+            <div class="rule-cards">
+              <div class="rule-card danger">
+                <div class="rc-icon">🛜</div>
+                <div>
+                  <div class="rc-title">Manipüle Edilmiş (Evil Twin) Hotspot</div>
+                  <div class="rc-desc">Saldırgan, gerçek bir ağın aynısını oluşturur. <strong>"Starbucks_Free", "AirportWiFi", "HotelGuest"</strong> gibi isimler. Bağlandığında tüm trafiğin saldırganın üzerinden akar.</div>
+                </div>
+              </div>
+              <div class="rule-card danger">
+                <div class="rc-icon">🏢</div>
+                <div>
+                  <div class="rc-title">Kurumsal Cihazlar — Özel Kural</div>
+                  <div class="rc-desc">Kurumsal hesaplara erişim sağlayan cihazlar <strong>havalimanı, kafe, tren, otobüs</strong> gibi açık alanlarda asla WLAN'a bağlanmamalı. Bir saldırgan şirket ağına sızmak için seni bekliyor olabilir.</div>
+                </div>
+              </div>
+              <div class="rule-card warn">
+                <div class="rc-icon">📶</div>
+                <div>
+                  <div class="rc-title">Bluetooth & WLAN — Kullanmıyorsan Kapat</div>
+                  <div class="rc-desc">Her iki bağlantı da kapalıyken saldırı yüzeyi sıfıra iner. <strong>Kullanacaksın → aç, bitirdin → kapat.</strong> Bu alışkanlık seni çoğu kablosuz saldırıdan korur.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-head">🔒 VPN: ZORUNLU KALKAN</div>
+            <p>VPN (Virtual Private Network), tüm internet trafiğini şifrelenmiş bir tünel içinden geçirir. MITM saldırganı trafiği görse bile okuyamaz.</p>
+            <div class="rule-cards">
+              <div class="rule-card tip">
+                <div class="rc-icon">✅</div>
+                <div>
+                  <div class="rc-title">Her hesaba güvenilir VPN ile bağlan</div>
+                  <div class="rc-desc">Hem kurumsal hem özel hesaplar için <strong>ücretli, güvenilir VPN</strong> kullan. Ücretsiz VPN'ler genellikle veriyi satarak para kazanır — yani sen ürünsün.</div>
+                </div>
+              </div>
+              <div class="rule-card danger">
+                <div class="rc-icon">🚫</div>
+                <div>
+                  <div class="rc-title">Ücretsiz / Demo VPN Kullanma</div>
+                  <div class="rc-desc"><strong>Demo, ücretsiz veya güvenliğinden emin olmadığın VPN kullanma.</strong> "Hola VPN" gibi servisler kullanıcıların bant genişliğini satıyor. Bazıları zararlı yazılım içeriyor.</div>
+                </div>
+              </div>
+              <div class="rule-card warn">
+                <div class="rc-icon">⚠️</div>
+                <div>
+                  <div class="rc-title">Zorunlu Açık Ağda Hassas İşlem = VPN Şart</div>
+                  <div class="rc-desc">Güvenliğinden emin olmadığın bir ağa bağlanmak <strong>zorundaysan</strong>, banka/e-posta/kurumsal sistem gibi hassas işlemleri VPN olmadan yapma.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-head">🏠 ROUTER GÜVENLİĞİ — WPA2 & ŞİFRE</div>
+            <div class="rule-cards">
+              <div class="rule-card tip">
+                <div class="rc-icon">📡</div>
+                <div>
+                  <div class="rc-title">WPA2 Protokolünü Kontrol Et</div>
+                  <div class="rc-desc">Özellikle kurumlarda WLAN router'larının <strong>WPA2 (veya WPA3)</strong> protokolü kullandığını doğrula. WEP ve WPA1 artık kolayca kırılabilir.</div>
+                </div>
+              </div>
+              <div class="rule-card danger">
+                <div class="rc-icon">🔑</div>
+                <div>
+                  <div class="rc-title">Varsayılan Router Şifresini Değiştir</div>
+                  <div class="rc-desc">Router ile gelen <strong>standart şifreleri (admin/admin, 1234 gibi) hemen değiştir.</strong> Bu şifreler internette listeler halinde yayınlı. Güçlü, benzersiz bir şifre koy.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dont-section">
+              <div class="dont-title">🚫 AĞ GÜVENLİĞİNDE ALTIN KURALLAR</div>
+              <ul class="dont-list">
+                <li><span class="dont-x">✕</span>Gerekmedikçe ücretsiz/açık Wi-Fi kullanma. <strong style="color:var(--yellow)">Kullanacaksan tehlikede olduğunu unutma!</strong></li>
+                <li><span class="dont-x">✕</span>Kurumsal cihazı havalimanı/kafe/toplu taşıma Wi-Fi'sine bağlama</li>
+                <li><span class="dont-x">✕</span>Bluetooth veya Wi-Fi'yi gereksiz yere açık bırakma</li>
+                <li><span class="dont-x">✕</span>Ücretsiz, demo veya güvenilmez VPN kullanma</li>
+                <li><span class="dont-x">✕</span>Router'ın varsayılan şifresini değiştirmeden kullanma</li>
+                <li><span class="dont-x">✕</span>WEP veya eski WPA protokollü ağda kurumsal işlem yapma</li>
+                <li><span class="do-check">✓</span><span style="color:var(--green)">Şüpheli ağlarda mutlaka VPN aç, hassas işlem yapma</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="reading-sidebar">
+          <div class="side-card">
+            <div class="side-title">🔐 VPN KARŞILAŞTIRMA</div>
+            <table class="vpn-table">
+              <tr><th>VPN</th><th>Tür</th><th>Güven</th></tr>
+              <tr><td><div class="vpn-name">Mullvad</div></td><td><span class="tag-paid">Ücretli</span></td><td><span class="check">✓✓✓</span></td></tr>
+              <tr><td><div class="vpn-name">ProtonVPN</div></td><td><span class="tag-paid">Karma</span></td><td><span class="check">✓✓✓</span></td></tr>
+              <tr><td><div class="vpn-name">NordVPN</div></td><td><span class="tag-paid">Ücretli</span></td><td><span class="check">✓✓</span></td></tr>
+              <tr><td><div class="vpn-name">ExpressVPN</div></td><td><span class="tag-paid">Ücretli</span></td><td><span class="check">✓✓</span></td></tr>
+              <tr><td><div class="vpn-name">Hola VPN</div></td><td><span class="tag-free">Ücretsiz</span></td><td><span class="cross">✕✕✕</span></td></tr>
+              <tr><td><div class="vpn-name">Rastgele ücretsiz</div></td><td><span class="tag-danger">TEHLİKELİ</span></td><td><span class="cross">✕✕✕</span></td></tr>
+            </table>
+            <p style="font-size:.68rem;color:var(--text-dim);margin-top:8px;">💡 BYTE önerir: <strong style="color:var(--green)">Mullvad veya ProtonVPN</strong></p>
+          </div>
+
+          <div class="side-card">
+            <div class="side-title">📶 WI-FI GÜVENLİK SEVİYELERİ</div>
+            <div style="display:flex;flex-direction:column;gap:7px;">
+              <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(0,255,136,.06);border-radius:7px;border-left:3px solid var(--green);">
+                <span style="font-size:.9rem">🏠</span>
+                <div><div style="font-size:.74rem;font-weight:700;color:#fff">Ev Ağı (WPA3)</div><div style="font-size:.65rem;color:var(--text-dim)">Güçlü şifre ile güvenli</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(0,255,136,.04);border-radius:7px;border-left:3px solid var(--green);">
+                <span style="font-size:.9rem">🏢</span>
+                <div><div style="font-size:.74rem;font-weight:700;color:#fff">Kurumsal Ağ (WPA2-E)</div><div style="font-size:.65rem;color:var(--text-dim)">Sertifika ile güvenli</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(255,214,0,.05);border-radius:7px;border-left:3px solid var(--yellow);">
+                <span style="font-size:.9rem">☕</span>
+                <div><div style="font-size:.74rem;font-weight:700;color:#fff">Kafe / Otel Wi-Fi</div><div style="font-size:.65rem;color:var(--text-dim)">VPN zorunlu, dikkatli ol</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(255,59,92,.05);border-radius:7px;border-left:3px solid var(--red);">
+                <span style="font-size:.9rem">✈️</span>
+                <div><div style="font-size:.74rem;font-weight:700;color:#fff">Havalimanı / Tren</div><div style="font-size:.65rem;color:var(--text-dim)">Kurumsal cihazla bağlanma!</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(255,59,92,.07);border-radius:7px;border-left:3px solid var(--red);">
+                <span style="font-size:.9rem">😈</span>
+                <div><div style="font-size:.74rem;font-weight:700;color:#fff">Evil Twin Hotspot</div><div style="font-size:.65rem;color:var(--text-dim)">Asla bağlanma!</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="byte-tip-card">
+            <div class="byte-tip-head">
+              <div class="byte-mini"><img src="videos/byte1.png" alt="BYTE" style="width:56px;height:56px;object-fit:contain;"></div>
+              <div><div class="byte-name">BYTE UYARIYOR 🚨</div></div>
+            </div>
+            <p class="byte-tip-text">"Ücretsiz Wi-Fi gerçekten ücretsiz mi? Hayır! Sen ödüyorsun — verilerinle, şifrenle, hesabınla. Gerekmedikçe kullanma. Kullanacaksan VPN'i aç. Kullandıktan sonra bağlantıyı kes ve 'unutulmuş ağlar' listesini temizle!"</p>
+          </div>
+
+          <div style="text-align:right">
+            <button class="btn btn-primary" onclick="completeStep(2)">Okumayı Tamamladım →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ADIM 3: QUİZ ══ -->
+    <div class="lesson-panel" id="panel-3">
+      <div class="quiz-wrap">
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
+        <div class="quiz-prog-label"><span id="q-label">Soru 1 / 10</span><span id="q-score">0 / 10 Doğru</span></div>
+        <div id="quiz-area"></div>
+      </div>
+    </div>
+
+    <!-- ══ ADIM 4: SENARYO ══ -->
+    <div class="lesson-panel" id="panel-4">
+      <div class="scenario-card">
+        <div class="scene-head">
+          <div class="scene-byte">🤖</div>
+          <div>
+            <div class="scene-title">BYTE'IN SENARYOSU — MITM: HAVALİMANI WI-FI</div>
+            <div class="scene-text">Amsterdam Havalimanı'ndasın (Schiphol). Uçuşuna 2 saat var. Önemli bir kurumsal raporu göndermen gerekiyor. Telefonunu açtın, Wi-Fi ağları göründü:</div>
+            <div class="wifi-popup">
+              <div class="wp-title">📶 Kullanılabilir Ağlar</div>
+              <ul class="wifi-list">
+                <li class="wifi-item danger">
+                  <div><div class="wifi-name">Schiphol_Airport_Free</div><div class="wifi-signal">📶📶📶 Çok güçlü sinyal</div></div>
+                  <span class="wifi-danger-tag">⚠️ SAHTE OLABİLİR</span>
+                </li>
+                <li class="wifi-item danger">
+                  <div><div class="wifi-name">KLM_GUEST</div><div class="wifi-signal">📶📶📶 Güçlü sinyal</div></div>
+                  <span class="wifi-danger-tag">⚠️ DOĞRULANMAMIŞ</span>
+                </li>
+                <li class="wifi-item">
+                  <div><div class="wifi-name">Corporate_VPN_4G</div><div class="wifi-signal">📶📶 Orta sinyal — kendi hotspot'un</div></div>
+                  <span class="wifi-safe-tag">✓ GÜVENLİ</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="scene-body">
+          <div class="scene-q">🤔 Kurumsal raporu göndermek için ne yaparsın?</div>
+          <div class="scene-opts" id="scenario-opts">
+            <div class="scene-opt" onclick="chooseScenario(this,false)">
+              <div class="s-icon">✈️</div>
+              <div class="s-text"><strong>A)</strong> "Schiphol_Airport_Free" ağına bağlanıyorum — çok güçlü sinyal var ve ücretsiz, hızlıca gönderip bitiririm.</div>
+            </div>
+            <div class="scene-opt" onclick="chooseScenario(this,false)">
+              <div class="s-icon">🔒</div>
+              <div class="s-text"><strong>B)</strong> "Schiphol_Airport_Free" ağına bağlanıyorum ama VPN açıyorum, böylece güvende olurum.</div>
+            </div>
+            <div class="scene-opt" onclick="chooseScenario(this,true)">
+              <div class="s-icon">📱</div>
+              <div class="s-text"><strong>C)</strong> Havalimanı Wi-Fi'sine hiç bağlanmıyorum. Kendi telefonumun mobil hattını hotspot yapıp kurumsal laptopumu oraya bağlıyorum, VPN ile gönderiyorum.</div>
+            </div>
+            <div class="scene-opt" onclick="chooseScenario(this,false)">
+              <div class="s-icon">⏳</div>
+              <div class="s-text"><strong>D)</strong> Uçakta gönderirim — acele değil, bekleyebilir.</div>
+            </div>
+          </div>
+          <div class="byte-fb" id="scenario-feedback">
+            <div class="byte-fb-text" id="feedback-text"></div>
+          </div>
+          <div id="scenario-next" style="text-align:right;margin-top:18px;display:none">
+            <button class="btn btn-primary" onclick="completeStep(4)">Senaryoyu Tamamla →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ADIM 5: ROZET ══ -->
+    <div class="lesson-panel" id="panel-5">
+      <div class="badge-panel">
+        <div class="badge-glow-wrap">
+          <div class="badge-glow"></div>
+          <div class="badge-icon">🌐</div>
+        </div>
+        <h2 class="badge-title">AĞ KORUYUCU</h2>
+        <p class="badge-subtitle">Tebrikler! Modül 02 — Ağ Güvenliği tamamlandı!</p>
+        <div class="xp-celebrate">
+          <div><div class="xp-big" id="final-xp">1520</div></div>
+          <div>
+            <div class="xp-lbl">TOPLAM XP</div>
+            <div class="xp-lbl" style="color:var(--accent);font-size:.62rem;">Modül 02'den +350 XP kazanıldı</div>
+          </div>
+        </div>
+        <div class="summary-grid">
+          <div class="sum-card"><div class="sum-val sv-b" id="sum-correct">10/10</div><div class="sum-label">Quiz Skoru</div></div>
+          <div class="sum-card"><div class="sum-val sv-c">10/10</div><div class="sum-label">Tamamlanan Adım</div></div>
+          <div class="sum-card"><div class="sum-val sv-y" id="sum-time">22 dk</div><div class="sum-label">Geçen Süre</div></div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid rgba(0,255,136,.15);border-radius:14px;padding:20px 28px;max-width:520px;margin:0 auto 28px;text-align:left;">
+          <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;color:var(--green);letter-spacing:2px;margin-bottom:12px;">🤖 BYTE'DAN ÖZET</div>
+          <p style="font-size:.82rem;color:var(--text);line-height:1.7;">
+            Artık ağ güvenliğinin temel kurallarını biliyorsun: <strong style="color:var(--accent)">Kurumsal cihazı açık ağa bağlama. Bluetooth & Wi-Fi'yi gereksiz kapatma. Güvenilir VPN kullan. Router şifreni değiştir.</strong> Ağ güvenliği disiplin ister — ama artık o disipline sahipsin! 🌐
+          </p>
+        </div>
+
+        </div>
+      
+
+      </div>
+    </div>
+</main>
+</div>
+
+<div id="toast-container"></div>
+
+<script>
+window.moduleQuestions = [
+  {
+    q: "MITM (Man-in-the-Middle - Aradaki Adam) saldırısında saldırganın temel amacı ve eylemi nedir?",
+    opts: [
+      "Hedef kullanıcının bilgisayarına veya telefonuna fiziksel olarak erişip cihazı tamamen çalmak.",
+      "Kullanıcı ile sunucu arasındaki veri trafiğine sızarak bilgileri gizlice okumak veya değiştirmek.",
+      "Bağlı bulunan Wi-Fi ağının bant genişliğini kasıtlı olarak daraltarak internet hızını düşürmek.",
+      "Yerel ağdaki modemin arayüzüne sızarak sadece kablosuz ağ şifresini fabrika ayarlarına sıfırlamak."
+    ],
+    correct: 1,
+    fb: {
+      wrong: "MITM saldırısında odak cihazın fiziksel çalınması değil, istemci-sunucu trafiğinin araya girilerek ele geçirilmesidir.",
+      correct: "Doğru! Saldırgan veri akışına man-in-the-middle olarak girer ve paketleri okuyup manipüle edebilir."
+    }
+  },
+  {
+    q: "Kurumsal bir cihazla havalimanı veya kafe gibi halka açık alanlardaki Wi-Fi ağlarına bağlanırken en güvenli yaklaşım hangisidir?",
+    opts: [
+      "Mevcut ağlar arasından sinyal seviyesi en yüksek ve bağlantı hızı en stabil olan açık ağı seçmek.",
+      "Sadece başında kilit simgesi olan HTTPS protokolü kullanan web sitelerine girerek işleme devam etmek.",
+      "Mümkünse hiç bağlanmamak; bunun yerine mobil hotspot ve güvenilir bir VPN bağlantısı kullanmak.",
+      "Ağ adında Airport veya Hotel gibi resmi ibareler bulunuyorsa bu ağları doğrudan güvenli kabul etmek."
+    ],
+    correct: 2,
+    fb: {
+      wrong: "Açık ağlarda SSID adı veya HTTPS tek başına yeterli güvence vermez; kurumsal cihaz için en düşük risk özel bağlantıdır.",
+      correct: "Harika! Mobil hotspot + güvenilir VPN kombinasyonu, sahte hotspot ve trafik izleme riskini ciddi ölçüde azaltır."
+    }
+  },
+  {
+    q: "Evil Twin (Kötü İkiz) hotspot saldırısı siber güvenlikte neyi ifade eder?",
+    opts: [
+      "Mevcut modemin kapsama alanını genişletmek amacıyla oluşturulan yasal bir yedek ağ kurulumudur.",
+      "Güvenilir bir ağın adı taklit edilerek saldırgan tarafından oluşturulan sahte ve tuzak kablosuz ağdır.",
+      "Sadece 5GHz frekans bandında çalışan ve eski nesil cihazların bağlanmasını engelleyen kısıtlı bir ağdır.",
+      "Kurumsal ağlara sızmak için tasarlanan ve aynı şifreleme protokolünü kullanan ikincil güvenlik katmanıdır."
+    ],
+    correct: 1,
+    fb: {
+      wrong: "Evil Twin, performans veya kapsama amaçlı yasal bir ağ değil; güvenilir SSID kopyasıyla kullanıcıyı kandıran sahte erişim noktasıdır.",
+      correct: "Doğru! Saldırgan, gerçek ağa benzer isimle sahte AP açarak kimlik bilgisi ve trafiği ele geçirmeye çalışır."
+    }
+  },
+  {
+    q: "Güvenliğinden emin olmadığınız bir Wi-Fi ağında hassas bir işlem yapmanız gerekiyorsa almanız gereken minimum güvenlik önlemi nedir?",
+    opts: [
+      "Tarayıcıyı gizli sekme modunda açarak geçmişin ve çerezlerin kaydedilmesini engellemek.",
+      "İnternet trafiğinizi uçtan uca şifreleyen ve IP adresinizi gizleyen bir VPN (Sanal Özel Ağ) kullanmak.",
+      "Bilgisayar yerine sadece mobil cihaz üzerinden bağlanarak hücresel veri şebekesinin gücünü kullanmak.",
+      "Bağlantı ayarlarından ağ adını otomatik kaydetme özelliğini devre dışı bırakarak bağlantıyı bitirmek."
+    ],
+    correct: 1,
+    fb: {
+      wrong: "Gizli sekme ve benzeri önlemler yerel iz bırakmayı azaltır ancak ağ katmanındaki dinleme riskini ortadan kaldırmaz.",
+      correct: "Evet! VPN tüneli trafik bütünlüğünü artırır ve açık ağda pasif dinleme ile MITM riskini azaltır."
+    }
+  },
+  {
+    q: "Yönlendirici (Router) güvenliğini sağlamak adına aşağıdakilerden hangisi teknik olarak doğrudur?",
+    opts: [
+      "Fabrika ayarlarında gelen varsayılan admin kullanıcı adı ve şifresinin değiştirilmeden bırakılması.",
+      "WEP protokolünün güncel cihazlarla tam uyumlu olması nedeniyle siber saldırılara karşı yeterli olması.",
+      "WPA2/WPA3 protokollerinin tercih edilmesi ve varsayılan yönetici giriş bilgilerinin güncellenmesi.",
+      "Ağ adını (SSID) gizli konuma getirmenin tüm dış saldırıları durdurmak için tek başına yeterli olması."
+    ],
+    correct: 2,
+    fb: {
+      wrong: "WEP ve varsayılan kimlik bilgileri kolay hedef oluşturur; SSID gizleme ise tek başına güvenlik kontrolü değildir.",
+      correct: "Doğru! WPA2/WPA3 kullanımı ve yönetici parolasının değiştirilmesi router sertleştirmenin temel adımıdır."
+    }
+  },
+  {
+    q: "Bluetooth ve WLAN (Wi-Fi) gibi kablosuz teknolojiler için en güvenli kullanım alışkanlığı nedir?",
+    opts: [
+      "Acil durumlarda hızlı bağlantı kurabilmek adına bu özellikleri her zaman açık ve görünür tutmak.",
+      "Yalnızca ihtiyaç duyulan anlarda bu özellikleri aktif hale getirip, kullanım bitince hemen kapatmak.",
+      "Güvenli olduğu varsayılan ofis veya ev gibi kapalı alanlarda bu bağlantıları tamamen devre dışı bırakmak.",
+      "Cihazın pil seviyesi kritik düzeye düşene kadar tüm kablosuz bağlantıları aktif olarak açık bırakmak."
+    ],
+    correct: 1,
+    fb: {
+      wrong: "Kablosuz arabirimleri sürekli açık bırakmak cihazın saldırı yüzeyini genişletir ve keşif saldırılarına alan açar.",
+      correct: "Mükemmel! Gerektiğinde aç-kapat yaklaşımı, gereksiz yayın ve izinsiz eşleşme riskini düşüren güvenli hijyen davranışıdır."
+    }
+  },
+  {
+    q: "Ücretsiz veya deneme sürümü olarak sunulan VPN servisleri hakkında hangi ifade en doğrudur?",
+    opts: [
+      "Bu servisler küresel güvenlik kuruluşları tarafından onaylandığı için her zaman en güvenli seçenektir.",
+      "Ücretli versiyonlara göre daha yüksek hız sundukları için veri sızıntılarını teknik olarak imkansız kılarlar.",
+      "Güvenilir olmayan ücretsiz VPN servisleri kullanıcı trafiğini izleyebilir ve veri gizliliği riski oluşturabilir.",
+      "Kurumsal cihazlarda veri güvenliğini maksimize etmek için özellikle bu tip ücretsiz araçlar önerilir."
+    ],
+    correct: 2,
+    fb: {
+      wrong: "Fiyat tek başına güvenlik göstergesi değildir; bazı servisler log tutabilir, trafiği analiz edebilir veya üçüncü taraf SDK kullanabilir.",
+      correct: "Doğru! VPN sağlayıcısının şeffaf kayıt politikası, denetim geçmişi ve veri işleme modeli teknik güvenlik kadar kritiktir."
+    }
+  },
+  {
+    q: "Aşağıdakilerden hangisi siber saldırganlar tarafından oluşturulmuş sahte bir hotspot ağının belirtisi olabilir?",
+    opts: [
+      "Mevcut yasal ağ adı ile neredeyse aynı olan fakat küçük karakter farkları içeren benzer bir ağ adı.",
+      "Kablosuz ağ sinyalinin orta veya düşük seviyede kalması nedeniyle bağlantının sık sık kopması.",
+      "Ağın ilk bağlantı aşamasında kullanıcıdan karmaşık bir parola veya kişisel doğrulama kodu istemesi.",
+      "Bağlantı protokolünün en güncel standart olan 5GHz bandı üzerinden yüksek hızda yayın yapması."
+    ],
+    correct: 0,
+    fb: {
+      wrong: "Sinyal seviyesi veya frekans bandı tek başına saldırı göstergesi değildir; SSID taklidi en yaygın sosyal mühendislik sinyalidir.",
+      correct: "Evet! Karakter benzerliğiyle oluşturulan SSID klonları Evil Twin saldırılarında en kritik kırmızı bayraklardan biridir."
+    }
+  },
+  {
+    q: "Güvenlik önlemi alınmamış açık bir Wi-Fi ağında aşağıdaki işlemlerden hangisinin yapılması en yüksek riski taşır?",
+    opts: [
+      "Yerel bir haber sitesinden güncel hava durumu bilgilerine bakmak veya genel gazete başlıklarını okumak.",
+      "Çevrimiçi bankacılık işlemleri yapmak veya kurumsal hesaplara kullanıcı adı ve şifre ile giriş yapmak.",
+      "Gidilecek bir adres için harita uygulaması üzerinden rota planlamak ve konum servislerini kullanmak.",
+      "Herkese açık müzik veya video platformları üzerinden çevrimiçi içerik tüketmek veya radyo dinlemek."
+    ],
+    correct: 1,
+    fb: {
+      wrong: "Açık ağlarda en kritik tehdit, kimlik ve finans verisi taşıyan oturumların ele geçirilmesidir; düşük hassasiyetli içerik tüketimi aynı seviyede risk üretmez.",
+      correct: "Doğru! Bankacılık ve kurumsal giriş işlemleri, açık Wi-Fi ortamında oturum çalma ve kimlik avı için en değerli hedeftir."
+    }
+  },
+  {
+    q: "Bir kablosuz ağdan ayrıldıktan sonra güvenlik seviyesini korumak için hangi ek adımın atılması önerilir?",
+    opts: [
+      "Ağı otomatik bağlan seçeneğinde bırakarak bir sonraki ziyarette hızlıca erişim sağlanmasını beklemek.",
+      "Cihazı ağa bağlı durumda bırakarak sadece ekranı kilitlemek ve arka plandaki işlemleri sürdürmek.",
+      "Cihaz ayarlarından Ağı Unut seçeneğini kullanmak ve ağla olan tüm dijital bağlantıyı tamamen kesmek.",
+      "Güvenliği doğrulamak amacıyla aynı ağ adına sahip farklı bir erişim noktasına tekrar bağlanmak."
+    ],
+    correct: 2,
+    fb: {
+      wrong: "Ağı otomatik kayıtlı bırakmak istem dışı yeniden bağlanma yaratabilir ve sahte erişim noktalarına maruz kalma riskini artırır.",
+      correct: "Kesinlikle! Ağı unutmak, cihazın aynı SSID'ye otomatik bağlanmasını engeller ve bağlantı hijyenini güçlendirir."
+    }
+  }
+];
+
+window.moduleSceneFeedbacks = [
+  {
+    correct: false,
+    correct_idx: 2,
+    text: "<strong>Yanlış tercih.</strong> Açık havalimanı ağı ve güçlü sinyal, güvenli olduğu anlamına gelmez. Evil Twin riski çok yüksektir."
+  },
+  {
+    correct: false,
+    correct_idx: 2,
+    text: "<strong>Riskli tercih.</strong> VPN koruma sağlar ama kurumsal cihazı açık havalimanı Wi-Fi'ına bağlamak yine de yüksek risklidir."
+  },
+  {
+    correct: true,
+    text: "<strong>Mükemmel karar!</strong> Açık Wi-Fi'dan kaçınıp kendi mobil hattın + VPN ile iletim yapmak en güvenli yaklaşımdır."
+  },
+  {
+    correct: false,
+    correct_idx: 2,
+    text: "<strong>Yetersiz tercih.</strong> İşi ertelemek güvenlik kararı değildir. Doğru yöntem güvenli bağlantı kurup işlemi güvenli kanaldan yapmak."
+  }
+];
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
+
+
+

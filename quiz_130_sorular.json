@@ -1,0 +1,1752 @@
+{
+  "generatedAt": "2026-03-15T21:26:50.935Z",
+  "totalQuestions": 130,
+  "modules": 13,
+  "moduleCounts": [
+    {
+      "module": 1,
+      "count": 10
+    },
+    {
+      "module": 2,
+      "count": 10
+    },
+    {
+      "module": 3,
+      "count": 10
+    },
+    {
+      "module": 4,
+      "count": 10
+    },
+    {
+      "module": 5,
+      "count": 10
+    },
+    {
+      "module": 6,
+      "count": 10
+    },
+    {
+      "module": 7,
+      "count": 10
+    },
+    {
+      "module": 8,
+      "count": 10
+    },
+    {
+      "module": 9,
+      "count": 10
+    },
+    {
+      "module": 10,
+      "count": 10
+    },
+    {
+      "module": 11,
+      "count": 10
+    },
+    {
+      "module": 12,
+      "count": 10
+    },
+    {
+      "module": 13,
+      "count": 10
+    }
+  ],
+  "errors": [],
+  "questions": [
+    {
+      "module": 1,
+      "questionNo": 1,
+      "question": "Aşağıdaki şifrelerden hangisi en güvenlidir?",
+      "options": {
+        "A": "Ahmet1990!",
+        "B": "MyDog2023",
+        "C": "xK#9mP!vL2@qW7",
+        "D": "123456789"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 1,
+      "questionNo": 2,
+      "question": "2FA (2 Faktörlü Doğrulama) neden sadece şifreden daha güvenlidir?",
+      "options": {
+        "A": "Şifreni daha uzun yapar",
+        "B": "Saldırganın şifreni bilse bile fiziksel/ikinci bir doğrulama gerektirir",
+        "C": "Şifren yoksa da giriş yapabilirsin",
+        "D": "Hesabını otomatik olarak kapatır"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 1,
+      "questionNo": 3,
+      "question": "Şifre yöneticisi kullanmanın en büyük avantajı nedir?",
+      "options": {
+        "A": "Şifreni otomatik olarak değiştirir",
+        "B": "Her site için güçlü ve benzersiz şifre oluşturup saklar, sadece bir ana şifre hatırlarsın",
+        "C": "İnternetsiz çalışmaz",
+        "D": "Şifreni arkadaşlarınla paylaşmanı sağlar"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 1,
+      "questionNo": 4,
+      "question": "Hangi 2FA yöntemi en güvenlidir?",
+      "options": {
+        "A": "SMS ile kod",
+        "B": "E-posta ile kod",
+        "C": "Fiziksel güvenlik anahtarı (Nitrokey gibi)",
+        "D": "Güvenlik sorusu (annenin kızlık soyadı)"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 1,
+      "questionNo": 5,
+      "question": "Aynı şifreyi birden fazla hesapta kullanmanın en büyük riski nedir?",
+      "options": {
+        "A": "Şifreyi unutabilirsin",
+        "B": "Bir site ihlal edilirse o şifreyi kullanan TÜM hesapların tehlikeye girer",
+        "C": "Şifren çok kısa kalır",
+        "D": "Sadece sosyal medya hesapların risk altına girer"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 1,
+      "questionNo": 6,
+      "question": "haveibeenpwned.com sitesi ne işe yarar?",
+      "options": {
+        "A": "Güçlü şifre oluşturur",
+        "B": "E-posta adresinin veri ihlallerinde yer alıp almadığını kontrol eder",
+        "C": "Şifreleri şifreli olarak saklar",
+        "D": "Virüs taraması yapar"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 1,
+      "questionNo": 7,
+      "question": "Tarayıcıya şifre kaydetmek ne kadar güvenlidir?",
+      "options": {
+        "A": "Tamamen güvenli, tarayıcılar şifreleri şifreler",
+        "B": "Kullanışlıdır ama bilgisayarın ele geçirilirse tüm şifreler çalınabilir — şifre yöneticisi daha güvenlidir",
+        "C": "Hiç güvenli değil, şifreler düz metin olarak saklanır",
+        "D": "Sadece Chrome güvenlidir, diğer tarayıcılar değil"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 1,
+      "questionNo": 8,
+      "question": "Passphrase (parola cümlesi) neden rastgele harflerden oluşan şifreden üstün olabilir?",
+      "options": {
+        "A": "Daha kısadır, hatırlaması kolay",
+        "B": "Hem uzundur hem hatırlanabilir — 'karpuz·fener·dağ·pijama' gibi 4 kelime 8 karakterli karmaşık şifreden çok daha güçlü olabilir",
+        "C": "Özel karakter içermez, bu yüzden daha basittir",
+        "D": "Sadece Türkçe kelimeler için çalışır"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 1,
+      "questionNo": 9,
+      "question": "Şifre yöneticisinin ana şifresi (master password) çalınırsa ne olur?",
+      "options": {
+        "A": "Hiçbir şey, şifre yöneticileri hacklenemez",
+        "B": "Tüm şifreler tehlikeye girebilir — bu yüzden ana şifre çok güçlü olmalı ve asla başka yerde kullanılmamalı",
+        "C": "Sadece en son eklenen şifre risk altına girer",
+        "D": "Şifre yöneticisi otomatik olarak tüm şifreleri değiştirir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 1,
+      "questionNo": 10,
+      "question": "SIM Swap saldırısı SMS tabanlı 2FA'yı nasıl atlatır?",
+      "options": {
+        "A": "SMS'leri kopyalayarak",
+        "B": "Operatörü kandırarak telefon numarasını kendi SIM kartına aktarır, böylece SMS kodlarını alır",
+        "C": "Telefonu fiziksel olarak çalarak",
+        "D": "SMS kodlarını tahmin ederek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 2,
+      "questionNo": 1,
+      "question": "MITM (Man-in-the-Middle) saldırısında saldırgan ne yapar?",
+      "options": {
+        "A": "Cihazı fiziksel olarak çalar",
+        "B": "Senin ile sunucu arasına girip trafiği okur/değiştirir",
+        "C": "Sadece Wi-Fi hızını düşürür",
+        "D": "Yalnızca modem şifresini sıfırlar"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 2,
+      "questionNo": 2,
+      "question": "Kurumsal cihazla havalimanı/kafe gibi açık alan Wi-Fi'larında en doğru yaklaşım nedir?",
+      "options": {
+        "A": "Sinyali en güçlü ağa bağlanmak",
+        "B": "Sadece HTTPS sitelere girip devam etmek",
+        "C": "Mümkünse hiç bağlanmamak; mobil hotspot + VPN kullanmak",
+        "D": "Ağ adında Airport/Hotel varsa güvenmek"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 2,
+      "questionNo": 3,
+      "question": "Evil Twin hotspot nedir?",
+      "options": {
+        "A": "Modemin yedek ağı",
+        "B": "Gerçek ağ adı taklit edilerek oluşturulan sahte ağ",
+        "C": "Sadece 5GHz çalışan ağ",
+        "D": "Şifreli kurumsal ağ"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 2,
+      "questionNo": 4,
+      "question": "Şüpheli bir Wi-Fi'da hassas işlem yapman gerekiyorsa minimum güvenlik önlemi nedir?",
+      "options": {
+        "A": "Tarayıcıyı gizli sekmede açmak",
+        "B": "VPN kullanmak",
+        "C": "Sadece telefonla bağlanmak",
+        "D": "Wi-Fi adını kaydetmemek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 2,
+      "questionNo": 5,
+      "question": "Router güvenliği için hangisi doğrudur?",
+      "options": {
+        "A": "Varsayılan admin şifresi kalabilir",
+        "B": "WEP hala yeterince güvenlidir",
+        "C": "WPA2/WPA3 tercih edilmeli ve varsayılan şifre değiştirilmeli",
+        "D": "Sadece ağ adını gizlemek yeterlidir"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 2,
+      "questionNo": 6,
+      "question": "Bluetooth ve WLAN için güvenli alışkanlık hangisidir?",
+      "options": {
+        "A": "Her zaman açık tutmak",
+        "B": "Yalnızca kullanırken açıp iş bitince kapatmak",
+        "C": "Sadece ofiste kapatmak",
+        "D": "Pil azsa kapatmak"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 2,
+      "questionNo": 7,
+      "question": "Ücretsiz/demo VPN'ler için en doğru ifade nedir?",
+      "options": {
+        "A": "Her zaman güvenlidir",
+        "B": "Daha hızlıdır, bu yüzden daha güvenlidir",
+        "C": "Güvenilir olmayan ücretsiz VPN'ler veri gizliliği riski taşıyabilir",
+        "D": "Kurumsal cihazda özellikle önerilir"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 2,
+      "questionNo": 8,
+      "question": "Aşağıdakilerden hangisi sahte hotspot belirtisi olabilir?",
+      "options": {
+        "A": "Ağ adının beklenenden çok benzer olması",
+        "B": "Sinyalin orta seviye olması",
+        "C": "Ağın şifre istemesi",
+        "D": "Ağın 5GHz olması"
+      },
+      "correctIndex": 0,
+      "correctLetter": "A"
+    },
+    {
+      "module": 2,
+      "questionNo": 9,
+      "question": "Açık Wi-Fi'da hangi işlem en risklidir?",
+      "options": {
+        "A": "Hava durumuna bakmak",
+        "B": "Banka/kurumsal oturum açma işlemleri",
+        "C": "Harita açmak",
+        "D": "Müzik dinlemek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 2,
+      "questionNo": 10,
+      "question": "Ağdan çıktıktan sonra güvenlik için iyi bir ek adım hangisidir?",
+      "options": {
+        "A": "Ağı otomatik bağlanmada bırakmak",
+        "B": "Bağlı kalıp ekranı kilitlemek",
+        "C": "Ağı unutmak ve bağlantıyı kesmek",
+        "D": "Aynı ağ adıyla tekrar bağlanmak"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 3,
+      "questionNo": 1,
+      "question": "Sideloading nedir ve neden tehlikelidir?",
+      "options": {
+        "A": "Uygulamaları güncellemeden kullanmak",
+        "B": "Google Play veya App Store dışından uygulama yüklemek — Google/Apple güvenlik denetimini atlatır",
+        "C": "Uygulamaları Wi-Fi yerine mobil veriyle indirmek",
+        "D": "Çok fazla uygulama yükleyerek telefonu yavaşlatmak"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 3,
+      "questionNo": 2,
+      "question": "Telefon çalındığında ilk yapman gereken adım nedir?",
+      "options": {
+        "A": "Polisi aramak ve kayıp bildirimi yapmak",
+        "B": "Hırsızı aramak ve cihazı geri istemek",
+        "C": "Başka bir cihazdan cihazı uzaktan kilitlemek",
+        "D": "Bankayı arayıp kartları iptal ettirmek"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 3,
+      "questionNo": 3,
+      "question": "Telefon çalındığında neden SIM kartı kilitlemen gerekir?",
+      "options": {
+        "A": "Telefon numaranın çalınmasını engellemek için",
+        "B": "Hırsızın SIM'i başka cihaza takıp SMS tabanlı 2FA kodlarını almasını önlemek için",
+        "C": "Şebeke ücretlerini durdurmak için",
+        "D": "Telefonu kapatmak için"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 3,
+      "questionNo": 4,
+      "question": "Halka açık Wi-Fi'de hangi işlemi yapmak güvenlidir?",
+      "options": {
+        "A": "Online bankacılık — HTTPS kullanıyorsa güvenlidir",
+        "B": "İş e-postalarını okumak ve yanıtlamak",
+        "C": "Haber okumak veya harita bakmak gibi hassas olmayan işlemler",
+        "D": "Sosyal medya hesabına giriş yapmak"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 3,
+      "questionNo": 5,
+      "question": "Telefonunda Wi-Fi kapalı ama Bluetooth açık. Kamuya açık bir ortamda bu durumda risk var mı?",
+      "options": {
+        "A": "Hayır, Bluetooth kısa menzilli olduğundan güvenlidir",
+        "B": "Evet — 'BlueSnarfing' veya 'Bluebugging' saldırılarıyla rehber, dosya ve mesajlara erişilebilir",
+        "C": "Hayır, yalnızca eşleştirilmiş cihazlar risk oluşturur",
+        "D": "Evet ama yalnızca Android cihazlarda bu risk vardır"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 3,
+      "questionNo": 6,
+      "question": "PostNL'den şöyle bir SMS geldi: 'Paketiniz askıya alındı. €1,95 gümrük ücreti için tıklayın → postnl-delivery.me/pay'. Ne yaparsın?",
+      "options": {
+        "A": "Tıklayıp ödeme yaparsın — küçük bir ücret, sorun olmaz",
+        "B": "SMS'i yoksayıp doğrudan postnl.nl adresini açar, paketin durumuna bakarsın",
+        "C": "SMS'teki linki açar ama kart bilgisi girmeden kontrol edersin",
+        "D": "Arkadaşlarına sorup onlar da aynı SMS'i aldıysa ödersin"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 3,
+      "questionNo": 7,
+      "question": "ING Bank'tan arandın: 'Hesabınızda şüpheli işlem var, güvenliğiniz için tek kullanımlık kodu söyleyin.' Ne yaparsın?",
+      "options": {
+        "A": "Kodu söylersin — gerçekten banka arıyor olabilir",
+        "B": "Telefonu kapatır, kartının arkasındaki resmi ING numarasını kendin arayarak doğrularsın",
+        "C": "Kodu söylemez ama ad-soyad ve kart numaranı verirsin",
+        "D": "Kodu söylemek yerine şifrenle doğrulama yaparsın"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 3,
+      "questionNo": 8,
+      "question": "Google Play'de bir uygulama indirmeden önce güvenli olduğundan emin olmak için ne kontrol edersin?",
+      "options": {
+        "A": "Sadece uygulamanın adına ve logosuna bakarsın",
+        "B": "Geliştirici adını, indirme sayısını, kullanıcı yorumlarını ve istenen izinleri kontrol edersin",
+        "C": "Uygulamanın ücretsiz olup olmadığına bakarsın — ücretsizse güvenlidir",
+        "D": "Sadece puan sayısına bakarsın — yüksek puanlıysa güvenlidir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 3,
+      "questionNo": 9,
+      "question": "Bir fener (torch) uygulaması konum, rehber ve mikrofon izni istiyor. Ne yaparsın?",
+      "options": {
+        "A": "İzinleri verirsin — üretici bu izinlere ihtiyaç duyuyordur",
+        "B": "İzinleri reddeder ya da uygulamayı hiç kurmazsın — fener için bu izinler gereksiz ve şüpheli",
+        "C": "Sadece konum iznini verirsin, diğerlerini reddedersin",
+        "D": "İzinleri verip sonra ayarlardan kaldırırsın — sorun olmaz"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 3,
+      "questionNo": 10,
+      "question": "Telefon çalınmadan önce hangi önlem veri kaybını en aza indirir?",
+      "options": {
+        "A": "Telefona güçlü bir kılıf takmak",
+        "B": "Telefonun hafızasını düzenli temizlemek",
+        "C": "Otomatik bulut yedeklemeyi aktif tutmak ve Cihazımı Bul'u etkinleştirmek",
+        "D": "Çok sayıda uygulama yüklememek"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 4,
+      "questionNo": 1,
+      "question": "WhatsApp'ta tanıdık birinden '6 haneli kodu yanlışlıkla sana gönderdim, atar mısın?' mesajı geldi. Ne yaparsın?",
+      "options": {
+        "A": "Kodu gönderirsin — tanıdık biri zor durumda",
+        "B": "Kodu göndermez, kişiyi doğrudan arayarak durumu teyit edersin",
+        "C": "Kodu göndermeden önce biraz beklersin",
+        "D": "Kodu göndermeden önce doğrulama sorusu sorarsın"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 2,
+      "question": "Yeni bir numaradan mesaj geliyor: 'Anne, benim! Telefonum bozuldu, bu arkadaşımın numarası. Acil €300 lazım.' Ne yaparsın?",
+      "options": {
+        "A": "Çocuğun zor durumda, parayı gönderirsin",
+        "B": "Eski numarasını arar ve sesini duyarak doğrularsın",
+        "C": "Mesajı dikkate almazsın",
+        "D": "Kimliğini kanıtlaması için soru sorarsın ve cevabını beklersin"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 3,
+      "question": "Bir site 'ücretsiz Netflix erişimi' sunuyor ve 'sadece doğrulama için' kart bilgilerini istiyor. Ne yaparsın?",
+      "options": {
+        "A": "Kart bilgilerini girersin — doğrulama için olduğunu söylüyorlar",
+        "B": "Bu tuzaktır — kart bilgilerini girmez, siteyi kapatırsın",
+        "C": "Sanal kart kullanırsın — böylece güvendesin",
+        "D": "Sadece kart numarasını girersin, CVV'yi vermezsin"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 4,
+      "question": "Sosyal medyada 'WhatsApp'ta seni takip edenleri gör!' linki paylaşılmış. Arkadaşların tıklamış bile. Ne yaparsın?",
+      "options": {
+        "A": "Tıklarsın — arkadaşların tıkladıysa güvenlidir",
+        "B": "Tıklamazsın — WhatsApp bu tür verileri üçüncü taraflarla paylaşmaz, bu bir tuzaktır",
+        "C": "Tıklarsın ama kişisel bilgi girmezsin",
+        "D": "Önce antivirüsle taratırsın, temizse tıklarsın"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 5,
+      "question": "Biri sana 'sadece banka hesabından para ilet, sana %10 komisyon vereyim' teklif etti. Ne yaparsın?",
+      "options": {
+        "A": "Kabul edersin — kolay para ve risk yok gibi görünüyor",
+        "B": "Reddedersin — bu kara para aklamadır, hem mağdur hem suça ortak olursun",
+        "C": "Önce küçük bir denemeyaparsin",
+        "D": "Yalnızca bir kez yaparsın, sonra bırakırsın"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 6,
+      "question": "Ofis otoparkında 'Maaş Listesi 2024' yazılı bir USB bellek buldun. Ne yaparsın?",
+      "options": {
+        "A": "İçine bakarsın — belki önemli birinin belgesi",
+        "B": "IT departmanına teslim edersin veya çöpe atarsın — asla takmadan",
+        "C": "Kendi bilgisayarına değil, iş arkadaşının bilgisayarına takarsın",
+        "D": "Antivirüsle taratırsın, temizse içine bakarsın"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 7,
+      "question": "Telefonda biri 'ING güvenlik birimi, hesabınızda şüpheli işlem var' deyip SMS doğrulama kodu istedi. Ne yaparsın?",
+      "options": {
+        "A": "Kodu söylersin — gerçekten banka arıyor olabilir",
+        "B": "Telefonu kapatıp ING'nin kartının arkasındaki resmi numarasını arayarak doğrularsın",
+        "C": "Kodu söylemeden adını ve son 4 hane kart numaranı verirsin",
+        "D": "Kodu söylemeden önce 'ben mi aradım?' diye sorarsın"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 8,
+      "question": "Sosyal mühendislik saldırılarında 'aciliyet' neden kullanılır?",
+      "options": {
+        "A": "Kurbanı daha nazik yapmak için",
+        "B": "Kurbanın düşünme ve doğrulama sürecini devre dışı bırakmak için",
+        "C": "Yasal sorumluluktan kaçmak için",
+        "D": "Saldırının daha hızlı tamamlanması için"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 9,
+      "question": "Crack program veya oyun hilesi indirmek neden tehlikelidir?",
+      "options": {
+        "A": "Sadece telif hakkı ihlali olduğu için",
+        "B": "Çoğunlukla trojan, keylogger veya spyware içerdiği için — program çalışırken arka planda bilgilerini çalabilir",
+        "C": "Yalnızca eski bilgisayarlarda sorun çıkardığı için",
+        "D": "İnternet hızını yavaşlattığı için"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 4,
+      "questionNo": 10,
+      "question": "Sosyal mühendisliğe karşı en etkili üçlü savunma kuralı hangisidir?",
+      "options": {
+        "A": "Şüphe et, güven, paylaş",
+        "B": "Dur, sor, doğrula",
+        "C": "Tıkla, kontrol et, devam et",
+        "D": "Oku, ara, bildir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 1,
+      "question": "Bir e-posta 'noreply@netf1ix-billing.com' adresinden geliyor. Bu ne tür bir saldırıdır?",
+      "options": {
+        "A": "Vishing",
+        "B": "E-posta Phishing — sahte domain (netf1ix yerine netf1ix)",
+        "C": "CEO Fraud",
+        "D": "Ransomware"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 2,
+      "question": "Bir site HTTPS kullanıyor. Bu o sitenin güvenilir olduğu anlamına gelir mi?",
+      "options": {
+        "A": "Evet, HTTPS şifreleme demektir",
+        "B": "Hayır — HTTPS yalnızca bağlantının şifreli olduğunu gösterir, site meşruiyetini kanıtlamaz",
+        "C": "Evet ama yalnızca .com uzantılılar için",
+        "D": "Evet, sertifikası varsa güvenlidir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 3,
+      "question": "Spear phishing ile normal phishing arasındaki temel fark nedir?",
+      "options": {
+        "A": "Spear phishing sadece e-postayla yapılır",
+        "B": "Spear phishing belirli bir kişiye özel hazırlanır — adı, şirketi, müdürünün adı kullanılır",
+        "C": "Normal phishing daha tehlikelidir",
+        "D": "Aralarında fark yoktur"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 4,
+      "question": "Ransomware saldırısına karşı en etkili korunma yöntemi hangisidir?",
+      "options": {
+        "A": "Fidyeyi hemen ödemek",
+        "B": "Antivirüs yazılımı yüklemek",
+        "C": "Düzenli çevrimdışı yedek almak (3-2-1 kuralı)",
+        "D": "İnterneti kapatmak"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 5,
+      "questionNo": 5,
+      "question": "Trojan (Truva Atı) zararlı yazılımı en çok hangi yolla bulaşır?",
+      "options": {
+        "A": "Yalnızca e-posta ekleriyle",
+        "B": "Meşru görünen ücretsiz yazılım, oyun veya araç — kurulunca arka kapı açar",
+        "C": "Bluetooth ile",
+        "D": "Sadece virüslü web sitelerini ziyaret ederek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 6,
+      "question": "QR kod phishing saldırısı neden tehlikelidir?",
+      "options": {
+        "A": "QR kodlar daha hızlı çalışır",
+        "B": "Mobil ekranda URL'nin tamamı görünmez — sahte siteye fark etmeden düşersin",
+        "C": "Antivirüs tarafından hiç taranamaz",
+        "D": "Yalnızca Android'i etkiler"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 7,
+      "question": "haveibeenpwned.com ne işe yarar?",
+      "options": {
+        "A": "Şifre üretir",
+        "B": "E-posta adresinin veri ihlallerinde yer alıp almadığını kontrol eder",
+        "C": "Antivirüs taraması yapar",
+        "D": "VPN hizmeti sunar"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 8,
+      "question": "CEO Fraud (BEC) saldırısı nedir?",
+      "options": {
+        "A": "CEO'nun bilgisayarına virüs bulaştırmak",
+        "B": "Şirket yöneticisi gibi davranarak çalışanı acil para transferine yönlendirmek",
+        "C": "CEO'nun e-postasını hacklemek",
+        "D": "Şirketin web sitesini ele geçirmek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 9,
+      "question": "Spyware / Keylogger zararlı yazılımından korunmak için en etkili adım nedir?",
+      "options": {
+        "A": "Güçlü şifre kullanmak",
+        "B": "Sistemi ve uygulamaları güncel tutmak, bilinmeyen program yüklememek",
+        "C": "Pahalı antivirüs satın almak",
+        "D": "Sadece bilinen siteleri ziyaret etmek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 5,
+      "questionNo": 10,
+      "question": "Şüpheli bir dosya veya linki açmadan önce ne yapmalısın?",
+      "options": {
+        "A": "Hızlıca açıp kontrol edersin",
+        "B": "virustotal.com'a yükleyerek 70'ten fazla motor ile tara",
+        "C": "Güvenilir birine gönderip açmasını iste",
+        "D": "Resmi siteden geliyorsa açabilirsin"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 6,
+      "questionNo": 1,
+      "question": "Bir fener uygulaması hangi izni isterse şüphelenmelisin?",
+      "options": {
+        "A": "İnternet erişimi",
+        "B": "Ekran parlaklığı",
+        "C": "Depolama alanı",
+        "D": "Rehbere erişim"
+      },
+      "correctIndex": 3,
+      "correctLetter": "D"
+    },
+    {
+      "module": 6,
+      "questionNo": 2,
+      "question": "iCloud Gelişmiş Veri Koruması (Advanced Data Protection) etkinleştirildiğinde ne olur?",
+      "options": {
+        "A": "Apple bile verilerinize erişemez — uçtan uca şifreleme kapsamı genişler",
+        "B": "Veriler yalnızca Wi-Fi ile aktarılır",
+        "C": "Yedeklemeler otomatik durur",
+        "D": "Fotoğraflar otomatik silinir"
+      },
+      "correctIndex": 0,
+      "correctLetter": "A"
+    },
+    {
+      "module": 6,
+      "questionNo": 3,
+      "question": "Google Drive'ın temel gizlilik sorunu nedir?",
+      "options": {
+        "A": "Dosyalar şifrelenmez",
+        "B": "Dosya boyutu sınırı çok düşük",
+        "C": "Google verilerinize erişebilir ve reklam hedefleme için analiz edebilir",
+        "D": "2FA desteklemiyor"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 6,
+      "questionNo": 4,
+      "question": "OneDrive'ın Google Drive'a göre öne çıkan güvenlik özelliği nedir?",
+      "options": {
+        "A": "Uçtan uca şifreleme",
+        "B": "Personal Vault ve fidye yazılımı koruması",
+        "C": "Açık kaynak şifreleme",
+        "D": "Apple ile entegrasyon"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 6,
+      "questionNo": 5,
+      "question": "GDPR kapsamında 'unutulma hakkı' ne anlama gelir?",
+      "options": {
+        "A": "Şifreni unutunca sıfırlama hakkı",
+        "B": "Hesabını geçici kapatma hakkı",
+        "C": "Verilerinin şirketten silinmesini talep etme hakkı",
+        "D": "Bildirimleri kapatma hakkı"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 6,
+      "questionNo": 6,
+      "question": "Google Drive'daki eski paylaşımı kaldırdığında o dosya karşı taraftan silinir mi?",
+      "options": {
+        "A": "Evet, anında silinir",
+        "B": "Hayır, indirildiyse karşı tarafın cihazında hâlâ vardır",
+        "C": "Evet ama 30 gün sonra",
+        "D": "Google Cloud tarafından silinir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 6,
+      "questionNo": 7,
+      "question": "Bir uygulama izin kontrolü için nereye bakmalısın? (iPhone)",
+      "options": {
+        "A": "Ayarlar → Gizlilik & Güvenlik → İzinler",
+        "B": "Uygulama içi ayarlar",
+        "C": "App Store değerlendirmeleri",
+        "D": "Safari'de arama"
+      },
+      "correctIndex": 0,
+      "correctLetter": "A"
+    },
+    {
+      "module": 6,
+      "questionNo": 8,
+      "question": "GDPR kapsamında şirket verilerini görme talebine kaç günde yanıt vermek zorunda?",
+      "options": {
+        "A": "7 gün",
+        "B": "15 gün",
+        "C": "60 gün",
+        "D": "30 gün"
+      },
+      "correctIndex": 3,
+      "correctLetter": "D"
+    },
+    {
+      "module": 6,
+      "questionNo": 9,
+      "question": "Buluta yüklenecek hassas bir belge (kimlik fotokopisi gibi) için en doğru yaklaşım hangisidir?",
+      "options": {
+        "A": "Doğrudan yükle, zaten şifreli",
+        "B": "Önce zip ile şifrele veya parola korumalı PDF yap, sonra yükle",
+        "C": "Hiçbir belgeyi buluta yükleme",
+        "D": "Sadece iCloud'a yükle"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 6,
+      "questionNo": 10,
+      "question": "Google hesabına bağlı üçüncü taraf uygulamaları nerede kontrol edebilirsin?",
+      "options": {
+        "A": "google.com/apps",
+        "B": "Gmail → Ayarlar → Uygulamalar",
+        "C": "Chrome → Uzantılar",
+        "D": "myaccount.google.com → Güvenlik → Üçüncü Taraf Erişimi"
+      },
+      "correctIndex": 3,
+      "correctLetter": "D"
+    },
+    {
+      "module": 7,
+      "questionNo": 1,
+      "question": "GDPR ölçülülük ilkesi sunum bağlamında ne anlama gelir?",
+      "options": {
+        "A": "Her sunum için GDPR belgesi hazırlanmalıdır",
+        "B": "İzin alınmış olsa bile gerekli olandan fazla kişisel veri paylaşmak hatadır",
+        "C": "Sunumlar yalnızca şifreli kanaldan yapılmalıdır",
+        "D": "Katılımcı sayısı 20'yi geçemez"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 2,
+      "question": "'%17,4 büyüme' rakamını güvenli hale getirmek için hangi teknik kullanılır?",
+      "options": {
+        "A": "Tamamen çıkarılır",
+        "B": "Genelleştirme — '%15–20 arası' gibi aralık verilir",
+        "C": "Yıldızlarla maskelenir: %**.* ",
+        "D": "Yalnızca sunum sonrası PDF'e eklenir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 3,
+      "question": "PowerPoint dosyasında hangi gizli içerik paylaşım sırasında risk yaratabilir?",
+      "options": {
+        "A": "Slayt arka plan rengi",
+        "B": "Konuşmacı notları, gizli slaytlar ve yorum geçmişi",
+        "C": "Yazı tipi seçimi",
+        "D": "Animasyon hızı"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 4,
+      "question": "Zoom toplantısında ekran paylaşımından önce yapılması gereken en önemli adım nedir?",
+      "options": {
+        "A": "Kamerayı kapatmak",
+        "B": "E-posta, mesaj sekmelerini kapatmak ve bildirimleri devre dışı bırakmak",
+        "C": "Toplantı linkini katılımcılara tekrar göndermek",
+        "D": "Mikrofonu test etmek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 5,
+      "question": "'Ahmet Yılmaz, Satış Müdürü' ifadesini sunumda kullanmak yerine ne söylenmeli?",
+      "options": {
+        "A": "A. Yılmaz, S. Müdürü",
+        "B": "Bir ekip yöneticisi",
+        "C": "Çalışan #1042",
+        "D": "İsim gizlenmiştir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 6,
+      "question": "Sunum dosyasını harici kişiye göndermeden önce hangi iki versiyon stratejisi uygulanmalı?",
+      "options": {
+        "A": "Biri renkli biri siyah-beyaz",
+        "B": "INTERNAL (detaylı) ve EXTERNAL (sadeleştirilmiş/anonim) olmak üzere iki ayrı versiyon",
+        "C": "Biri PDF biri PPT",
+        "D": "Biri Türkçe biri İngilizce"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 7,
+      "question": "Bir sunum fotoğrafında arka planda yaka kartı görünüyor. Bu neden risk oluşturur?",
+      "options": {
+        "A": "Estetik açıdan kötü görünür",
+        "B": "Yaka kartındaki ad, şirket veya rozet bilgisi fotoğrafta okunabilir",
+        "C": "Fotoğraf telif hakkı ihlali olur",
+        "D": "Sadece güvenlik personeli için geçerlidir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 8,
+      "question": "Sunum sırasında biri detay sorarsa ve bu bilgiyi o ortamda paylaşman uygun değilse ne yapmalısın?",
+      "options": {
+        "A": "Soruyu görmezden gelirsin",
+        "B": "'Bu bilgiyi bu ortamda detaylandıramam' diyip geçersin — bu doğru bir davranıştır",
+        "C": "Toplantıyı bitirirsin",
+        "D": "Soruyu sorana özel mesaj atarsın"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 9,
+      "question": "Bir çalışanın performans ve maaş bilgisi neden sunum ortamında paylaşılmamalıdır?",
+      "options": {
+        "A": "Bu bilgiler yalnızca İngilizce paylaşılabilir",
+        "B": "Bunlar GDPR'da özel nitelikli veri sayılır; sunum ortamı bu tür hassas bilgi için uygun değildir",
+        "C": "Sadece C-level toplantılarında paylaşılabilir",
+        "D": "Maaş bilgisi 100€ altındaysa sorun olmaz"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 7,
+      "questionNo": 10,
+      "question": "Doğaçlama konuşma sırasında sunum güvenliği açısından en kritik kural nedir?",
+      "options": {
+        "A": "Yavaş konuşmak",
+        "B": "İsim vermemek ve net rakamları ağzından kaçırmamak",
+        "C": "Her cümleden sonra duraksamak",
+        "D": "Slayta bakarak okumak"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 8,
+      "questionNo": 1,
+      "question": "Güvenli iletişimin '3 katmanı' nedir?",
+      "options": {
+        "A": "Şifre, 2FA ve antivirüs",
+        "B": "Transit şifreleme (E2EE), metaveri koruması ve cihazda depolama kontrolü",
+        "C": "VPN, firewall ve şifreleme",
+        "D": "İçerik şifreleme, bağlantı şifreleme ve yedekleme"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 8,
+      "questionNo": 2,
+      "question": "WhatsApp ile Signal arasındaki en kritik fark nedir?",
+      "options": {
+        "A": "Signal tamamen ücretsiz, WhatsApp ücretli",
+        "B": "WhatsApp mesaj içeriğini şifrelemez, Signal şifreler",
+        "C": "WhatsApp metaveri toplar ve Meta'ya aktarır; Signal toplamaz",
+        "D": "Signal yalnızca Android'de çalışır"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 8,
+      "questionNo": 3,
+      "question": "Threema'yı diğer uygulamalardan ayıran en önemli özellik nedir?",
+      "options": {
+        "A": "Tamamen ücretsizdir",
+        "B": "Telefon numarası veya e-posta adresi gerektirmez — Threema ID ile çalışır",
+        "C": "Yalnızca iOS'ta mevcuttur",
+        "D": "Mesajları otomatik olarak siler"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 8,
+      "questionNo": 4,
+      "question": "Süreli mesaj özelliği iletişim güvenliğinde hangi katmanı tamamlar?",
+      "options": {
+        "A": "Katman 1 — transit şifreleme",
+        "B": "Katman 2 — metaveri koruması",
+        "C": "Katman 3 — cihazda depolama kontrolü",
+        "D": "Hiçbirini — sadece pratik bir özellik"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 8,
+      "questionNo": 5,
+      "question": "Telegram'da E2EE hangi koşulda aktif olur?",
+      "options": {
+        "A": "Her zaman otomatik aktiftir",
+        "B": "Yalnızca grup sohbetlerinde",
+        "C": "Yalnızca 'Gizli Sohbet' modunda",
+        "D": "Telegram hiçbir zaman E2EE sağlamaz"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 8,
+      "questionNo": 6,
+      "question": "Signal'de IP adresini gizlemek için hangi ayar açılmalıdır?",
+      "options": {
+        "A": "Ayarlar → Bildirimler → Sessiz mod",
+        "B": "Ayarlar → Gizlilik → Gelişmiş → Aramaları Her Zaman Aktar",
+        "C": "Ayarlar → Hesap → Telefon numarasını gizle",
+        "D": "Ayarlar → Veri kullanımı → VPN"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 8,
+      "questionNo": 7,
+      "question": "ProtonMail ile normal bir Gmail kullanıcısına şifreli e-posta göndermek mümkün müdür?",
+      "options": {
+        "A": "Hayır, alıcının da ProtonMail kullanması gerekir",
+        "B": "Evet — alıcıya şifreli bağlantı gönderilir, bir şifreyle açar",
+        "C": "Sadece Tutanota kullanıcılarına gönderilebilir",
+        "D": "Hayır, ProtonMail yalnızca kendi sunucusunda çalışır"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 8,
+      "questionNo": 8,
+      "question": "WhatsApp'ta süreli mesajın varsayılan durumu nedir ve nasıl açılır?",
+      "options": {
+        "A": "Varsayılan açık, kapatmak için Ayarlar → Sohbetler",
+        "B": "Varsayılan kapalı — her sohbet için ayrı ayrı açılmalı: Sohbet → İsim → Süreli Mesajlar",
+        "C": "Otomatik 90 günde bir temizlenir",
+        "D": "Süreli mesaj özelliği WhatsApp'ta mevcut değil"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 8,
+      "questionNo": 9,
+      "question": "Konferansta gördüğün bir posterteki QR kodu taramadan önce hangi kontrolü yapmalısın?",
+      "options": {
+        "A": "QR kodunun rengi ve kalitesine bak",
+        "B": "Domain adresini kontrol et — resmi adres mi (web.whatsapp.com gibi), HTTP mi HTTPS mi",
+        "C": "Posterin boyutuna ve matbaa kalitesine bak",
+        "D": "Çevrenizdekilere sorun — tanıdık biri koymuş olabilir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 8,
+      "questionNo": 10,
+      "question": "'E2EE kullanıyorum yani güvendeyim' ifadesi neden eksik bir yaklaşımdır?",
+      "options": {
+        "A": "E2EE aslında güvenli değildir",
+        "B": "E2EE sadece Katman 1'dir — metaveri toplanabilir, telefonda mesajlar birikir; Katman 2 ve 3 olmadan tam güvenlik sağlanamaz",
+        "C": "E2EE yalnızca ücretli uygulamalarda gerçekten çalışır",
+        "D": "E2EE yalnızca sesli aramalarda geçerlidir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 1,
+      "question": "ENISA'ya göre AB'deki hesap ele geçirme (ATO) vakalarının büyük çoğunluğu hangi yöntemle gerçekleşiyor?",
+      "options": {
+        "A": "Brute force (kaba kuvvet) saldırısı",
+        "B": "Credential stuffing — başka platformdan çalınan şifre bilgisinin denenmesi",
+        "C": "SIM swap saldırısı",
+        "D": "Keylogger yazılımı"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 2,
+      "question": "2FA türleri arasında phishing'e karşı en dirençli seçenek hangisidir?",
+      "options": {
+        "A": "SMS ile gelen 6 haneli kod",
+        "B": "TOTP authenticator uygulaması (Google Authenticator vb.)",
+        "C": "FIDO2 donanım güvenlik anahtarı (YubiKey vb.)",
+        "D": "E-posta ile gelen doğrulama kodu"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 9,
+      "questionNo": 3,
+      "question": "Passkey (geçiş anahtarı) teknolojisinin şifreye göre en kritik avantajı nedir?",
+      "options": {
+        "A": "Daha kısa ve hatırlanması kolay",
+        "B": "Şifre olmadığından credential stuffing ve phishing mümkün değil",
+        "C": "Yalnızca Apple cihazlarında çalışır",
+        "D": "Daha ucuz güvenlik çözümü sunar"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 4,
+      "question": "Hesabının ihlal edildiğini fark ettiğinde doğru adım sırası hangisi?",
+      "options": {
+        "A": "Oturumları kapat → şifreyi değiştir → 2FA'yı etkinleştir",
+        "B": "Şifreyi değiştir → oturumları kapat → 2FA'yı gözden geçir → kurtarma kodlarını yenile",
+        "C": "Platformun destek ekibine bildir → şifreyi değiştir",
+        "D": "Antivirüs tara → şifreyi değiştir → oturumları kapat"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 5,
+      "question": "GDPR kapsamında bir platform bir hesap ihlalini öğrendiğinde yetkililere ne kadar süre içinde bildirmek zorundadır?",
+      "options": {
+        "A": "7 gün",
+        "B": "30 gün",
+        "C": "72 saat",
+        "D": "24 saat"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 9,
+      "questionNo": 6,
+      "question": "SMS ile 2FA'nın en ciddi güvenlik açığı nedir?",
+      "options": {
+        "A": "SMS mesajları çok hızlı siliyor",
+        "B": "SIM swap — saldırgan operatörü arayarak hattı kendi SIM'ine taşıtabilir",
+        "C": "SMS mesajı yalnızca 5 dakika geçerli",
+        "D": "SMS mesajı şifreli değil"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 7,
+      "question": "LinkedIn güvenlik ayarlarında 2FA için hangi seçenek tercih edilmelidir?",
+      "options": {
+        "A": "SMS kodu — en hızlı seçenek",
+        "B": "Authenticator uygulaması (TOTP) — SMS'den çok daha güvenli",
+        "C": "E-posta kodu",
+        "D": "Telefon araması"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 8,
+      "question": "Hesabını ihlal eden saldırgan, oturumunu kapatmadan önce ne yapabilir?",
+      "options": {
+        "A": "Yalnızca profilini görüntüleyebilir",
+        "B": "OAuth uygulaması bağlayarak şifren değişse bile erişimini sürdürebilir",
+        "C": "Hesabını tamamen silebilir",
+        "D": "Yalnızca e-postalarını okuyabilir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 9,
+      "question": "haveibeenpwned.com sitesi ne için kullanılır?",
+      "options": {
+        "A": "Güçlü şifre üretmek",
+        "B": "E-posta adresinin geçmiş veri ihlallerinde yer alıp almadığını kontrol etmek",
+        "C": "2FA kodunu doğrulamak",
+        "D": "VPN bağlantısı kurmak"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 9,
+      "questionNo": 10,
+      "question": "Google Passkey oluşturmak için doğru adım dizisi hangisidir?",
+      "options": {
+        "A": "Google Play Store → Passkey Uygulaması → İndir",
+        "B": "myaccount.google.com → Güvenlik → Passkey'ler → Yeni Passkey Oluştur",
+        "C": "Gmail → Ayarlar → Gizlilik → Passkey Etkinleştir",
+        "D": "Google → Profil → Güvenlik → 2FA → Passkey Ekle"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 1,
+      "question": "Havaalanındaki 'Airport_Free_WiFi' adlı ağa bağlanmak neden tehlikeli olabilir?",
+      "options": {
+        "A": "Havaalanı Wi-Fi her zaman yavaştır",
+        "B": "Bu ağ saldırgan tarafından kurulmuş sahte bir evil twin noktası olabilir — tüm trafiğiniz izlenebilir",
+        "C": "Havaalanı ağları ücretli olduğu için ücretsiz olanlar kısıtlıdır",
+        "D": "Ağa bağlanmak pilinizi hızlı tüketir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 2,
+      "question": "Juice Jacking saldırısı nasıl gerçekleşir?",
+      "options": {
+        "A": "Saldırgan Wi-Fi üzerinden cihaza bağlanır",
+        "B": "Halka açık USB şarj noktası üzerinden veri çalınır veya zararlı yazılım yüklenir",
+        "C": "Kötü amaçlı e-posta ekiyle cihaz enfekte edilir",
+        "D": "Bluetooth üzerinden dosya gönderilir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 3,
+      "question": "İngiltere'de sınır güvenliği yasası (Schedule 7) kapsamında şifre vermeyi reddetmek ne anlama gelir?",
+      "options": {
+        "A": "Cihazına el konulabilir ama serbest bırakılırsın",
+        "B": "Suç sayılır ve yasal yaptırımla karşılaşabilirsin",
+        "C": "Sadece ek sorgulama yapılır",
+        "D": "Hiçbir yaptırım uygulanamaz — insan hakları koruması devrededir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 4,
+      "question": "Seyahatte 'seyahat modu' uygulamak ne anlama gelir?",
+      "options": {
+        "A": "Telefonunu uçak moduna almak",
+        "B": "Cihazı sınıra minimum veri, maksimum şifrelemeyle taşımak — biometrik yerine PIN kullanmak",
+        "C": "Veri tasarrufu modunu açmak",
+        "D": "Uygulamaları kapatıp sadece telefon olarak kullanmak"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 5,
+      "question": "Yurt dışı seyahatte en güvenli internet bağlantı yöntemi hangisidir?",
+      "options": {
+        "A": "Otel Wi-Fi — parola korumalı olduğu için güvenlidir",
+        "B": "Kendi telefon mobil verisini hotspot olarak kullanmak",
+        "C": "Havaalanı ağı — büyük kurumlar tarafından yönetilir",
+        "D": "Kafedeki Wi-Fi — şifre istediği için güvenlidir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 6,
+      "question": "Laptop'u otel odasında bırakmak neden güvenlik riski oluşturur?",
+      "options": {
+        "A": "Laptop şarjda yanabilir",
+        "B": "Oda personeli, bakım görevlisi veya başka biri fiziksel erişim sağlayabilir — disk şifrelemesi olmadan veri çalınabilir",
+        "C": "Oteller çalışanların eşyalarından sorumlu değildir",
+        "D": "Yalnızca eski otel modellerinde risk vardır"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 7,
+      "question": "ABD sınırında (CBP) gümrük yetkilisi cihazını incelemek isterse ne olur?",
+      "options": {
+        "A": "İzin vermeni beklemek zorundalar — reddedebilirsin",
+        "B": "Border Search Exception kapsamında mahkeme kararı olmadan cihazını inceleyebilirler, ABD vatandaşı değilsen reddetmek giriş reddine yol açabilir",
+        "C": "Yalnızca çanta ve valizi inceleme yetkileri vardır",
+        "D": "Konsolosluktan izin almaları gerekir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 8,
+      "question": "Halka açık ortamda laptopa çalışırken omuz sörfüne karşı en etkili önlem nedir?",
+      "options": {
+        "A": "Ekranın parlaklığını düşürmek",
+        "B": "Privacy screen (ekran gizleme filtresi) kullanmak",
+        "C": "Sadece gece çalışmak",
+        "D": "Arkaya duvar olan bir yer seçmek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 10,
+      "questionNo": 9,
+      "question": "Seyahatte cihaz kaybolduğunda doğru ilk adım nedir?",
+      "options": {
+        "A": "Hemen uzaktan silme komutu gönder — veri güvende olsun",
+        "B": "Polis karakoluna git ve kayıp bildirimi yap",
+        "C": "Önce uzaktan kilitle ve konumu izle — silme kararını aceleyle verme",
+        "D": "Operatörü ara ve SIM kartı iptal et"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 10,
+      "questionNo": 10,
+      "question": "Ücretsiz VPN kullanmak neden önerilmez?",
+      "options": {
+        "A": "Ücretsiz VPN'lerde hız düşebilir ve bağlantı kararsız olabilir; ancak bu tek başına ana güvenlik riski değildir",
+        "B": "Bazı ücretsiz VPN'ler trafik ve kullanım verilerini toplayıp üçüncü taraflarla paylaşabilir; güvenlik aracı verini metaya çevirebilir",
+        "C": "Bazı ücretsiz VPN uygulamaları cihazda aşırı izin ister ve reklam/izleme SDK'ları çalıştırabilir; risk yalnızca mobil uyumluluk değildir",
+        "D": "Sınırda sorun yaşamak tek başına sebep değildir; asıl mesele sağlayıcının kayıt politikası ve veri işleme şeffaflığıdır"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 1,
+      "question": "Bir öğretmen öğrenci performans verilerini içeren Excel tablosunu ChatGPT'ye yükleyerek analiz yaptırmak istiyor. Bu eylem hangi temel riski doğurur?",
+      "options": {
+        "A": "Excel dosyaları ChatGPT tarafından okunamaz",
+        "B": "Hassas öğrenci verileri güvenliği bilinmeyen sunuculara iletilir ve kul hakkı ihlali oluşur",
+        "C": "ChatGPT yanlış analiz yapabilir",
+        "D": "Dosya boyutu çok büyük olabilir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 2,
+      "question": "\"Yapay zekayı bir stajyer gibi düşünün\" metaforu ne anlama gelir?",
+      "options": {
+        "A": "YZ çok yavaş çalışır",
+        "B": "YZ zeki ve hafızası güçlü — ama neyi gizli tutması gerektiğini bilmez; verdiğiniz bilgiler başkaları tarafından görülebilir",
+        "C": "YZ sadece basit işler yapabilir",
+        "D": "YZ'nin kendi fikirleri yoktur"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 3,
+      "question": "10 Altın İlke'ye göre, başkasına ait bir veriyi yapay zeka aracıyla işlemeniz zorunluysa ne yapmalısınız?",
+      "options": {
+        "A": "En güvenilir YZ aracını seçip doğrudan yükleyin",
+        "B": "İsimleri, iletişim bilgilerini ve kimliği belli eden unsurları kaldırarak anonimleştirin",
+        "C": "Sadece gece vakti işlem yapın",
+        "D": "Hukuk departmanını bekleyin"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 4,
+      "question": "Deepfake ses klonlama saldırısında saldırgan ne yapar?",
+      "options": {
+        "A": "Kurbanın telefonunu hackler",
+        "B": "Kısa bir ses örneğinden kurbanın sesini kopyalayarak \"CEO'dan acil para transferi\" gibi sahte talepler oluşturur",
+        "C": "Sosyal medya hesabını ele geçirir",
+        "D": "E-posta şifresini çalar"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 5,
+      "question": "ChatGPT'de en az risk oluşturan kullanım yöntemi hangisidir?",
+      "options": {
+        "A": "Google hesabıyla giriş yapmak",
+        "B": "\"Temporary Chat\" (Geçici Sohbet) modunu kullanmak",
+        "C": "Anonim tarayıcıda açmak",
+        "D": "Telefon numarası ile kaydolmak"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 6,
+      "question": "Gizlilik odaklı YZ araçları arasında en yüksek güvenlik seviyesini sunan hangisidir?",
+      "options": {
+        "A": "ChatGPT (varsayılan ayarlar)",
+        "B": "Gemini (Google)",
+        "C": "Yerel olarak çalıştırılan açık kaynaklı YZ (Llama, GPT4All)",
+        "D": "Perplexity.ai"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 11,
+      "questionNo": 7,
+      "question": "GDPR'ın hangi maddesi YZ araçlarına veri yüklerken en sık çatışma yaşanan alandır?",
+      "options": {
+        "A": "Madde 1 — GDPR'ın Amacı",
+        "B": "Madde 7 — Açık Rıza",
+        "C": "Madde 25 — Tasarım Gereği Veri Koruma",
+        "D": "Madde 30 — Kayıt Tutma"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 8,
+      "question": "\"Veri emanettir\" anlayışında bir kurum yöneticisi bağışçı listesini başka bir kuruluşla iyi niyetle paylaşırsa ne olur?",
+      "options": {
+        "A": "İyi niyet tüm etik riskleri ortadan kaldırır",
+        "B": "Veri sahibinin açık rızası alınmadığından kul hakkı ihlali, güven ihlali ve mahremiyet zedelenmesi gerçekleşir",
+        "C": "Sadece GDPR para cezası riski oluşur",
+        "D": "Bağışçılar zaten kamuya açık kişilerdir"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 11,
+      "questionNo": 9,
+      "question": "Bir deepfake video izliyorsunuz — hangisi sahte olduğunu gösteren bir işaret DEĞİLDİR?",
+      "options": {
+        "A": "Yüz kenarlarında bulanıklık ve ışık tutarsızlığı",
+        "B": "Dudak-ses senkronizasyon bozukluğu",
+        "C": "Videonun çok yüksek çözünürlüklü olması",
+        "D": "Göz kırpma düzensizliği ve aşırı pürüzsüz cilt"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 11,
+      "questionNo": 10,
+      "question": "\"Saklama Süresini Kısalt\" ilkesi ne anlama gelir?",
+      "options": {
+        "A": "Verileri hızlı internet ile yüklemelisiniz",
+        "B": "İşi biten veriyi gereksiz yere saklamak emaneti riske atmaktır — verinin amacı kalmadığında güvenli şekilde imha edilmelidir",
+        "C": "Sadece küçük dosyalar saklanmalıdır",
+        "D": "Veriler 30 günden fazla tutulamaz"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 12,
+      "questionNo": 1,
+      "question": "SIM bypass saldırısında saldırgan ne yapar?",
+      "options": {
+        "A": "Telefona fiziksel olarak erişir ve SIM kartı çalar",
+        "B": "Operatörü kandırarak veya içeriden biriyle anlaşarak telefon numarasını başka bir SIM'e aktarır",
+        "C": "SMS mesajlarını havada yakalar (man-in-the-middle)",
+        "D": "Telefonun şifresini kırar"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 12,
+      "questionNo": 2,
+      "question": "2FA için en güvenli yöntem hangisidir?",
+      "options": {
+        "A": "SMS ile doğrulama kodu almak",
+        "B": "E-posta ile doğrulama kodu almak",
+        "C": "Google Authenticator veya Authy gibi uygulama tabanlı 2FA",
+        "D": "Güvenlik soruları (doğum tarihi, anne kızlık soyadı gibi)"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 12,
+      "questionNo": 3,
+      "question": "Instagram'da aktif oturumları kontrol etmek için doğru yol hangisi?",
+      "options": {
+        "A": "Profil → Düzenle → Cihazlar",
+        "B": "Ayarlar → Hesap Merkezi → Şifre ve Güvenlik → Giriş etkinliği",
+        "C": "Keşfet → Güvenlik → Aktif oturumlar",
+        "D": "Bildirimler → Güvenlik Uyarıları"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 12,
+      "questionNo": 4,
+      "question": "Telegram hakkında hangisi DOĞRUDUR?",
+      "options": {
+        "A": "Tüm Telegram sohbetleri varsayılan olarak uçtan uca şifreli",
+        "B": "Telegram'da hiç şifreleme yok",
+        "C": "Yalnızca 'Gizli Sohbet' özelliği uçtan uca şifreli; normal sohbetler Telegram'ın sunucularında açık metin olarak durur",
+        "D": "Telegram, WhatsApp'tan daha az güvenli çünkü açık kaynak değil"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 12,
+      "questionNo": 5,
+      "question": "WhatsApp'ta şifre paylaşmak neden tehlikelidir?",
+      "options": {
+        "A": "WhatsApp şifreleme kullanmıyor",
+        "B": "WhatsApp mesajları Google Drive veya iCloud'a yedeklenebilir — bu yedekler her zaman uçtan uca şifreli değildir. Ayrıca mesaj geçmişi ele geçirilirse şifre de gider",
+        "C": "WhatsApp mesajları Meta tarafından okunuyor",
+        "D": "WhatsApp yalnızca kısa mesajlara izin veriyor"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 12,
+      "questionNo": 6,
+      "question": "Instagram hesabın ele geçirildiğinde ilk 5 dakikada ne yapmalısın?",
+      "options": {
+        "A": "Instagram'a şikâyet formu doldur ve cevap bekle",
+        "B": "Hesaba hâlâ girebiliyorsan şifreyi hemen değiştir ve tüm diğer oturumları kapat",
+        "C": "Ekran görüntüsü al ve sosyal medyada paylaş",
+        "D": "Arkadaşlarını ara ve durumu anlat"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 12,
+      "questionNo": 7,
+      "question": "Kurumsal sosyal medya hesaplarında hangi e-posta kullanılmalı?",
+      "options": {
+        "A": "Yöneticinin kişisel e-postası — pratik olduğu için",
+        "B": "Gmail veya Hotmail gibi ücretsiz genel amaçlı e-postalar",
+        "C": "Kurumsal e-posta (kurum.org, kurum.com.tr gibi) — problem çıkınca platform ile iletişim kolaylaşır",
+        "D": "Şifreli geçici e-postalar"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 12,
+      "questionNo": 8,
+      "question": "'Credential stuffing' saldırısı nedir?",
+      "options": {
+        "A": "Saldırganın fiziksel olarak bilgisayarına erişmesi",
+        "B": "Sızdırılmış kullanıcı adı-şifre kombinasyonlarının otomatik araçlarla farklı platformlarda denenmesi",
+        "C": "Phishing e-postası ile şifre çalınması",
+        "D": "Tarayıcıdaki kaydedilmiş şifrelerin kopyalanması"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 12,
+      "questionNo": 9,
+      "question": "WhatsApp'ta 'Bağlı Cihazlar' bölümünü kontrol etmek neden önemli?",
+      "options": {
+        "A": "Telefonun depolama kapasitesini görmek için",
+        "B": "WhatsApp Web veya masaüstü uygulaması üzerinden kim mesajlarını okuyabilir bunu kontrol etmek için",
+        "C": "Whatsapp'ın güncel sürümde olup olmadığını anlamak için",
+        "D": "Veri kullanımını görmek için"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 12,
+      "questionNo": 10,
+      "question": "Hesap ele geçirildikten sonra saldırgan ilk ne yapar?",
+      "options": {
+        "A": "İçerikleri inceleyip çıkar",
+        "B": "E-posta adresini, telefon numarasını ve şifreyi değiştirerek seni dışarı kilitler",
+        "C": "Hesabı kapatır",
+        "D": "Yalnızca bazı gönderileri siler"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 13,
+      "questionNo": 1,
+      "question": "ENISA verilerine göre AB'de gençlerin yüzde kaçı çevrimiçi zorbalığa maruz kalmaktadır?",
+      "options": {
+        "A": "%15",
+        "B": "%28",
+        "C": "%44",
+        "D": "%60"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 13,
+      "questionNo": 2,
+      "question": "Europol'e göre siber zorbalık vakalarının yaklaşık kaçta kaçı raporlanmamaktadır?",
+      "options": {
+        "A": "%20",
+        "B": "%40",
+        "C": "%55",
+        "D": "%68"
+      },
+      "correctIndex": 3,
+      "correctLetter": "D"
+    },
+    {
+      "module": 13,
+      "questionNo": 3,
+      "question": "Araştırmalar, bir tanık müdahale ettiğinde zorbalığın ne oranda durduğunu gösteriyor?",
+      "options": {
+        "A": "%20",
+        "B": "%35",
+        "C": "%57",
+        "D": "%80"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 13,
+      "questionNo": 4,
+      "question": "\"Doxing\" ne demektir?",
+      "options": {
+        "A": "Hesap şifrelerini kırmak",
+        "B": "Kişinin özel bilgilerini rızası olmadan kamuya ifşa etmek",
+        "C": "Sahte kimlikle profil açmak",
+        "D": "Virüslü dosya göndermek"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 13,
+      "questionNo": 5,
+      "question": "Zorbalığa maruz kaldığında yapman gereken ilk şey nedir?",
+      "options": {
+        "A": "Hemen saldırgana yanıt ver",
+        "B": "Ekran görüntüsü al ve kanıtları kaydet",
+        "C": "Sosyal medya hesabını kapat",
+        "D": "Polise git"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 13,
+      "questionNo": 6,
+      "question": "AB'nin Dijital Hizmetler Yasası (DSA) kapsamında büyük platformlar zararlı içerikleri kaç saat içinde kaldırmak zorundadır?",
+      "options": {
+        "A": "24 saat",
+        "B": "48 saat",
+        "C": "72 saat",
+        "D": "7 gün"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 13,
+      "questionNo": 7,
+      "question": "GDPR'ın \"Unutulma Hakkı\" hangi maddede yer alır ve ne anlama gelir?",
+      "options": {
+        "A": "Madde 5 — Veri işleme ilkeleri",
+        "B": "Madde 7 — Açık rıza şartı",
+        "C": "Madde 17 — İzinsiz paylaşılan içeriklerin kaldırılmasını talep etme hakkı",
+        "D": "Madde 32 — Güvenlik önlemleri"
+      },
+      "correctIndex": 2,
+      "correctLetter": "C"
+    },
+    {
+      "module": 13,
+      "questionNo": 8,
+      "question": "\"Aktif seyirci\" olmak ne demektir?",
+      "options": {
+        "A": "Zorbalığa katılmadan sadece izleyen, hiçbir şey yapmayan kişi",
+        "B": "Zorbalığı kaydedip polise bildiren kişi",
+        "C": "İçeriği raporlayan ve mağdura destek olan kişi",
+        "D": "Zorbalığı başlatan kişi"
+      },
+      "correctIndex": 0,
+      "correctLetter": "A"
+    },
+    {
+      "module": 13,
+      "questionNo": 9,
+      "question": "\"Sadece şakaydı\" savunması zorbalık bağlamında neden geçerli değildir?",
+      "options": {
+        "A": "Geçerlidir, niyet her şeydir",
+        "B": "Zorbalıkta kriter gönderenin niyeti değil, hedefin yaşadığı acıdır",
+        "C": "Şaka yalnızca yüz yüze yapılabilir",
+        "D": "Dijital ortamda şaka olmaz"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    },
+    {
+      "module": 13,
+      "questionNo": 10,
+      "question": "Kanıt toplarken engelleme işlemini ne zaman yapmalısın?",
+      "options": {
+        "A": "Zorbalığı fark eder etmez hemen",
+        "B": "Önce tüm kanıtları (ekran görüntüsü, URL, tarih) aldıktan sonra",
+        "C": "Yetkililere başvurduktan sonra",
+        "D": "Engellemene gerek yok"
+      },
+      "correctIndex": 1,
+      "correctLetter": "B"
+    }
+  ]
+}
