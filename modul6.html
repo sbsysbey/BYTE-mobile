@@ -102,10 +102,36 @@
 .side-item strong{color:var(--text);}
 
 /* QUIZ */
-.quiz-wrap{max-width:680px;}
-.quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:7px;overflow:hidden;border:1px solid var(--border);}
-.quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--green));border-radius:50px;transition:width .6s ease;}
-.quiz-prog-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:18px;font-family:'Orbitron',sans-serif;}
+.quiz-wrap{
+  max-width:680px;
+  margin-bottom:20px;
+}
+.quiz-prog-label{
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+.quiz-prog-bar{
+  background:var(--bg-panel);
+  border-radius:50px;
+  height:7px;
+  margin-bottom:7px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.quiz-prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--cyan),var(--green));
+  border-radius:50px;
+  transition:width .6s ease;
+}
+.quiz-prog-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:.78rem;
+  color:var(--text-dim);
+  margin-bottom:18px;
+  font-family:'Orbitron',sans-serif;
+}
 .question-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:16px;}
 .question-num{font-family:'Orbitron',sans-serif;font-size:.81rem;color:var(--cyan);letter-spacing:2px;margin-bottom:10px;}
 .question-text{font-size:.95rem;color:#fff;font-weight:600;line-height:1.5;margin-bottom:18px;}
@@ -603,8 +629,8 @@
     <!-- PANEL 3: QUIZ -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label"><span id="q-counter">Soru 1 / 10</span><span id="q-score">0 / 10 Doğru</span></div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>

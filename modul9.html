@@ -119,47 +119,242 @@
 .rb-text{font-size:.85rem;color:var(--text-dim);line-height:1.55;}
 
 /* QUIZ */
-.quiz-wrap{max-width:700px;}
-.quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:8px;overflow:hidden;border:1px solid var(--border);}
-.quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:50px;transition:width .5s ease;}
-.quiz-prog-label{display:flex;justify-content:space-between;font-size:.82rem;color:var(--text-dim);margin-bottom:22px;font-family:'Orbitron',sans-serif;}
-.question-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:18px;}
-.question-num{font-family:'Orbitron',sans-serif;font-size:.77rem;color:var(--cyan);letter-spacing:2px;margin-bottom:9px;}
-.question-text{font-size:1.08rem;color:#fff;font-weight:600;line-height:1.5;margin-bottom:18px;}
-.options{display:flex;flex-direction:column;gap:9px;}
-.option-btn{background:var(--bg-panel);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:13px 17px;text-align:left;cursor:pointer;transition:.25s;font-family:'Exo 2',sans-serif;font-size:.93rem;color:var(--text);display:flex;align-items:flex-start;gap:11px;}
-.option-btn:hover{background:rgba(96,200,240,.06);border-color:rgba(96,200,240,.3);color:#fff;}
-.option-btn.correct{background:rgba(74,222,154,.08);border-color:var(--green);color:var(--green);}
-.option-btn.wrong{background:rgba(248,113,113,.08);border-color:var(--red);color:var(--red);}
-.option-btn span{line-height:1.45;word-break:break-word;overflow-wrap:anywhere;white-space:normal;}
-.option-letter{width:24px;height:24px;border-radius:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;font-family:'Orbitron',sans-serif;flex-shrink:0;transition:.25s;}
-.option-btn.correct .option-letter{background:rgba(74,222,154,.2);border-color:var(--green);color:var(--green);}
-.option-btn.wrong .option-letter{background:rgba(248,113,113,.2);border-color:var(--red);color:var(--red);}
-.feedback-box{border-radius:10px;padding:11px 15px;font-size:.91rem;line-height:1.5;margin-top:11px;display:none;}
-.feedback-box.correct{background:rgba(74,222,154,.07);border:1px solid rgba(74,222,154,.3);color:var(--green);}
-.feedback-box.wrong{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.3);color:var(--red);}
-.feedback-box.show{display:block;animation:fadeUp .3s ease;}
-.quiz-actions{display:flex;justify-content:flex-end;}
-
-
+.quiz-wrap{
+  max-width:700px;
+  margin-bottom:20px;
+}
+.quiz-prog-bar{
+  background:var(--bg-panel);
+  border-radius:50px;
+  height:7px;
+  margin-bottom:8px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.quiz-prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  border-radius:50px;
+  transition:width .5s ease;
+}
+.quiz-prog-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:.82rem;
+  color:var(--text-dim);
+  margin-bottom:22px;
+  font-family:'Orbitron',sans-serif;
+}
+.question-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:26px;
+  margin-bottom:18px;
+}
+.question-num{
+  font-family:'Orbitron',sans-serif;
+  font-size:.77rem;
+  color:var(--cyan);
+  letter-spacing:2px;
+  margin-bottom:9px;
+}
+.question-text{
+  font-size:1.08rem;
+  color:#fff;
+  font-weight:600;
+  line-height:1.5;
+  margin-bottom:18px;
+}
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+.option-btn{
+  background:var(--bg-panel);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  padding:13px 17px;
+  text-align:left;
+  cursor:pointer;
+  transition:.25s;
+  font-family:'Exo 2',sans-serif;
+  font-size:.93rem;
+  color:var(--text);
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+}
+.option-btn:hover{
+  background:rgba(96,200,240,.06);
+  border-color:rgba(96,200,240,.3);
+  color:#fff;
+}
+.option-btn.correct{
+  background:rgba(74,222,154,.08);
+  border-color:var(--green);
+  color:var(--green);
+}
+.option-btn.wrong{
+  background:rgba(248,113,113,.08);
+  border-color:var(--red);
+  color:var(--red);
+}
+.option-btn span{
+  line-height:1.45;
+  word-break:break-word;
+  overflow-wrap:anywhere;
+  white-space:normal;
+}
+.option-letter{
+  width:24px;
+  height:24px;
+  border-radius:5px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.82rem;
+  font-weight:700;
+  font-family:'Orbitron',sans-serif;
+  flex-shrink:0;
+  transition:.25s;
+}
+.option-btn.correct .option-letter{
+  background:rgba(74,222,154,.2);
+  border-color:var(--green);
+  color:var(--green);
+}
+.option-btn.wrong .option-letter{
+  background:rgba(248,113,113,.2);
+  border-color:var(--red);
+  color:var(--red);
+}
+.feedback-box{
+  border-radius:10px;
+  padding:11px 15px;
+  font-size:.91rem;
+  line-height:1.5;
+  margin-top:11px;
+  display:none;
+}
+.feedback-box.correct{
+  background:rgba(74,222,154,.07);
+  border:1px solid rgba(74,222,154,.3);
+  color:var(--green);
+}
+.feedback-box.wrong{
+  background:rgba(248,113,113,.07);
+  border:1px solid rgba(248,113,113,.3);
+  color:var(--red);
+}
+.feedback-box.show{
+  display:block;
+  animation:fadeUp .3s ease;
+}
+.quiz-actions{
+  display:flex;
+  justify-content:flex-end;
+}
 
 /* NOTIFICATION MOCKUP */
-.notif-mockup{background:#000;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:20px 22px;max-width:380px;margin:18px auto;font-family:-apple-system,system-ui,sans-serif;}
-.nm-bar{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1);}
-.nm-icon{width:34px;height:34px;border-radius:8px;background:#e44;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-.nm-app{font-size:.78rem;color:rgba(255,255,255,.6);margin-bottom:1px;}
-.nm-time{font-size:.72rem;color:rgba(255,255,255,.4);margin-left:auto;}
-.nm-title{font-size:.94rem;font-weight:700;color:#fff;margin-bottom:4px;}
-.nm-body{font-size:.83rem;color:rgba(255,255,255,.7);line-height:1.45;}
-.nm-location{display:flex;align-items:center;gap:7px;margin-top:10px;background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.25);border-radius:8px;padding:7px 11px;}
-.nm-loc-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;animation:pulse2 1s infinite;}
-@keyframes pulse2{0%,100%{opacity:1;}50%{opacity:.4;}}
-.nm-loc-text{font-size:.80rem;color:var(--red);}
-.nm-flags{display:flex;flex-direction:column;gap:5px;margin-top:11px;}
-.nm-flag{display:flex;align-items:center;gap:7px;font-size:.79rem;color:rgba(255,255,255,.6);}
-.nm-flag-dot{width:5px;height:5px;border-radius:50%;background:var(--yellow);flex-shrink:0;}
-
-
+.notif-mockup{
+  background:#000;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:20px 22px;
+  max-width:380px;
+  margin:18px auto;
+  font-family:-apple-system,system-ui,sans-serif;
+}
+.nm-bar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.nm-icon{
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  background:#e44;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.2rem;
+  flex-shrink:0;
+}
+.nm-app{
+  font-size:.78rem;
+  color:rgba(255,255,255,.6);
+  margin-bottom:1px;
+}
+.nm-time{
+  font-size:.72rem;
+  color:rgba(255,255,255,.4);
+  margin-left:auto;
+}
+.nm-title{
+  font-size:.94rem;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:4px;
+}
+.nm-body{
+  font-size:.83rem;
+  color:rgba(255,255,255,.7);
+  line-height:1.45;
+}
+.nm-location{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:10px;
+  background:rgba(248,113,113,.12);
+  border:1px solid rgba(248,113,113,.25);
+  border-radius:8px;
+  padding:7px 11px;
+}
+.nm-loc-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--red);
+  flex-shrink:0;
+  animation:pulse2 1s infinite;
+}
+@keyframes pulse2{
+  0%,100%{opacity:1;}
+  50%{opacity:.4;}
+}
+.nm-loc-text{
+  font-size:.80rem;
+  color:var(--red);
+}
+.nm-flags{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  margin-top:11px;
+}
+.nm-flag{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:.79rem;
+  color:rgba(255,255,255,.6);
+}
+.nm-flag-dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--yellow);
+  flex-shrink:0;
+}
 
 </style>
 </head>
@@ -624,8 +819,13 @@
     <!-- ═══════════════ PANEL 3: QUIZ ═══════════════ -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label"><span id="q-counter"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;">
+          <span id="q-label"></span>
+          <span id="q-score"></span>
+        </div>
+        <div class="quiz-prog-bar">
+          <div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div>
+        </div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -713,7 +913,7 @@ function byteSpeak(){
   window.speechSynthesis.cancel();
   const av=document.getElementById('byteAvatar');
   const ut=new SpeechSynthesisUtterance(
-    'Modül dokuz. Hesap ve Platform Güvenliği. Şifreni ele geçirmek zorunda değiller — başka platformdan çaldıkları şifrenle deniyorlar. Credential stuffing bu yüzden bu kadar etkili. Çözüm şu: her hesap için benzersiz şifre, şifre yöneticisi ve güçlü iki faktörlü doğrulama. Mümkünse passkey kullan — şifre yoksa çalınacak şey de yok. Ve hesabın ihlal edildiğinde sıra önemli: önce şifre, sonra oturumlar, sonra iki faktörlü doğrulama. Altmış dakikan var. Hızlı ol.'
+    'Modül dokuz. Hesap ve Platform Güvenliği. Şifreni ele geçirmek zorunda değiller — başka platformdan çaldıkları şifrelerle deniyorlar. Credential stuffing bu yüzden bu kadar etkili. Çözüm şu: her hesap için benzersiz şifre, şifre yöneticisi ve güçlü iki faktörlü doğrulama. Mümkünse passkey kullan — şifre yoksa çalınacak şey de yok. Ve hesabın ihlal edildiğinde sıra önemli: önce şifre, sonra oturumlar, sonra iki faktörlü doğrulama. Altmış dakikan var. Hızlı ol.'
   );
   ut.lang='tr-TR';ut.rate=0.91;ut.pitch=1.04;
   const voices=window.speechSynthesis.getVoices();
@@ -755,12 +955,12 @@ window.moduleQuestions=[
   {q:"Bir hesabinizin ihlal edildigini fark ettiginizde, guvenligi en saglam sekilde yeniden tesis etmek icin izlenmesi gereken dogru adim sirasi hangisidir?",
    opts:["Once tum aktif oturumlari kapatmak, ardindan sadece 2FA ayarlarini gozden gecirmek.","Sifreyi degistirmek, tum oturumlari kapatmak, 2FA'yi aktif edip Kurtarma Kodlarini yenilemek.","Hicbir islem yapmadan once platformun destek ekibine durumu bildirmek ve beklemek.","Bilgisayarda antivirus taramasi yapmak ve tarayicidaki tum cerezleri temizlemek."],
    correct:1,fb:{wrong:"En guvenli akista sadece tek adim yetmez; sifre, oturum, 2FA ve kurtarma kodlari birlikte ele alinmalidir.",correct:"Dogru! Bu sira saldirganin kalici erisimini keser ve hesabi guvenli sekilde yeniden tesis eder."}},
-  {q:"GDPR kapsaminda, bir platform ciddi bir veri ihlali ogrendiginde bu durumu yetkililere bildirmek icin yasal olarak ne kadar sureye sahiptir?",
+  {q:"GDPR kapsaminda, bir platform ciddi bir veri ihlali ogrendiginizde bu durumu yetkililere bildirmek icin yasal olarak ne kadar sureye sahiptir?",
    opts:["Olayin tespit edilmesinden itibaren en gec 30 gun icerisinde bildirim yapmalidir.","Ihlalin uzerinden 7 is gunu gectikten sonra resmi aciklama yapmalidir.","Kullanici guvenligi icin ihlali ogrendigi andan itibaren ilk 24 saat icinde.","Olayin tespit edilmesinden itibaren en gec 72 saat icerisinde bildirim yapmalidir."],
    correct:3,fb:{wrong:"GDPR Madde 33 kapsaminda standart sure 72 saattir; daha uzun sure genel kural degildir.",correct:"Kesinlikle dogru! Ciddi veri ihlallerinde yetkili makama bildirim icin yasal ust sinir 72 saattir."}},
   {q:"LinkedIn veya X gibi platformlarda neden Authenticator App (TOTP) secenegi SMS'e tercih edilmelidir?",
    opts:["SMS kodu en hizli secenek olsa da, bu uygulamalar internet olmadan da kod uretebilir.","Uygulama tabanli kodlar sebeke sinyali gerektirmez ve SIM kart saldirilarina karsi cok daha guvenlidir.","E-posta ile gelen kodlar sadece bilgisayarda calistigi icin bu uygulamalar daha mobil uyumludur.","Telefon aramasi ile kod alma yontemi sadece kurumsal hesaplar icin gecerli bir guvenlik katmanidir."],
-   correct:1,fb:{wrong:"TOTP'nin farki hiz degil; SIM swap gibi operator temelli saldirilardan bagimsiz olmasidir.",correct:"Dogru! TOTP kodlari operator hatti gerektirmez ve SMS tabanli 2FA'ya gore daha guvenlidir."}}
+   correct:1,fb:{wrong:"TOTP'nin farki hiz degil; SIM swap gibi operator temelli saldirilardan bagimsiz olmasidir.",correct:"Dogru! TOTP kodlari operator hatti gerektirmez ve SMS tabanli 2FA'ya gore daha guvenli kabul edilir."}}
 ];
 
 /* ── NAVIGATION ── */

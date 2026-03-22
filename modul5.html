@@ -83,28 +83,10 @@
 .side-item strong{color:var(--text);}
 
 /* QUIZ */
-.quiz-wrap{max-width:680px;}
-.quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:7px;overflow:hidden;border:1px solid var(--border);}
-.quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--red),var(--orange));border-radius:50px;transition:width .6s ease;}
-.quiz-prog-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:18px;font-family:'Orbitron',sans-serif;}
-.question-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:16px;}
-.question-num{font-family:'Orbitron',sans-serif;font-size:.81rem;color:var(--red);letter-spacing:2px;margin-bottom:10px;}
-.question-text{font-size:.95rem;color:#fff;font-weight:600;line-height:1.5;margin-bottom:18px;}
-.options{display:flex;flex-direction:column;gap:9px;}
-.option-btn{background:var(--bg-panel);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:13px 16px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:.2s;text-align:left;width:100%;color:var(--text-dim);font-size:.91rem;font-family:'Exo 2',sans-serif;}
-.option-btn:hover{background:rgba(248,113,113,.05);border-color:rgba(248,113,113,.25);color:#fff;}
-.option-btn.correct{background:rgba(74,222,154,.09);border-color:var(--green);color:var(--green);}
-.option-btn.wrong{background:rgba(248,113,113,.09);border-color:var(--red);color:var(--red);}
-.option-btn:disabled{cursor:default;}
-.option-btn span{line-height:1.45;word-break:break-word;overflow-wrap:anywhere;white-space:normal;}
-.option-letter{width:24px;height:24px;border-radius:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:.68rem;font-weight:700;flex-shrink:0;}
-.option-btn.correct .option-letter{background:rgba(74,222,154,.18);border-color:var(--green);color:var(--green);}
-.option-btn.wrong .option-letter{background:rgba(248,113,113,.18);border-color:var(--red);color:var(--red);}
-.feedback-box{border-radius:9px;padding:11px 15px;font-size:.87rem;line-height:1.5;margin-top:11px;display:none;}
-.feedback-box.correct{background:rgba(74,222,154,.07);border:1px solid rgba(74,222,154,.25);color:var(--green);}
-.feedback-box.wrong{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.25);color:var(--red);}
-.feedback-box.show{display:block;animation:fadeUp .3s ease;}
-.quiz-actions{display:flex;justify-content:flex-end;}
+.quiz-wrap {
+  display: block;
+  margin-bottom: 18px;
+}
 
 /* SCENARIO */
 
@@ -404,10 +386,11 @@
     </div>
 
     <!-- PANEL 3: QUIZ -->
+    <!-- ───── PANEL 3: QUIZ ───── -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label"><span id="q-counter"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -523,7 +506,8 @@ window.moduleQuestions=[
     correct:0, fb:{wrong:"Trojanlar en sık güvenilir görünen yazılımların içine gizlenir; kurulumla birlikte sisteme yerleşir.",correct:"Aynen öyle! Truva atı, masum görünen kurulum dosyalarıyla gelip arka kapı açabilir."} },
   { q:"QR kod üzerinden yapılan oltalama (Quishing) saldırıları neden kullanıcılar için daha büyük risk taşır?",
     opts:["QR kodlar kamera tarafından okutulduğu an telefonun tüm donanımını otomatik olarak kilitleme gücüne sahiptir.","QR kodlar içindeki gömülü linkler, hiçbir mobil antivirüs yazılımı tarafından teknik olarak taranamaz.","Mobil ekranlarda URL adresinin tamamı net görünmeyebilir ve kullanıcı sahte siteyi fark etmeden açabilir.","Bu saldırı türü sadece belirli marka cihazların güvenlik protokollerini hedef alarak sistemi devre dışı bırakır."],
-    correct:2, fb:{wrong:"Asıl risk, kullanıcı linki açmadan önce tam adresi net göremeyebildiği için sahte siteyi fark etmemesidir.",correct:"Doğru! Quishing'de görünürlük sorunu nedeniyle kullanıcılar sahte domaine kolayca yönlendirilebilir."} },
+    correct:2, fb:{wrong:"Asıl risk, kullanıcı linki açmadan önce tam adresi net göremezsin, sahte siteyi fark etmeden açar."},
+    correct:"Doğru! Quishing'de görünürlük sorunu nedeniyle kullanıcılar sahte domaine kolayca yönlendirilebilir."} ,
   { q:"\"Kargonuz adres yetersizliği nedeniyle teslim edilemedi, güncellemek için tıklayın\" mesajındaki linke tıklamadan önce neye dikkat etmelisiniz?",
     opts:["Mesajın geldiği telefon numarasının kurumsal olup olmadığına ve linkin resmi site adresiyle uyuşup uyuşmadığına.","Mesajın gönderildiği saate dikkat ederim; mesai saatleri dışında gelen kargo mesajlarını güvenli kabul ederim.","Mesajda kullanılan dilin ne kadar profesyonel olduğuna bakarım; nazik bir dil kullanılmışsa linke güvenle tıklarım.","Kargonun beklediğim bir sipariş olup olmadığını kontrol ederim; eğer bir siparişim varsa linki doğrudan açarım."],
     correct:0, fb:{wrong:"Saat veya üslup tek başına güven göstergesi değildir; resmi domain ve gönderici bilgisi doğrulanmalıdır.",correct:"Doğru! Önce gönderici ve linkin resmi alan adıyla eşleşip eşleşmediğini kontrol etmek gerekir."} },

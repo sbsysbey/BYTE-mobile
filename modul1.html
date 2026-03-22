@@ -92,7 +92,7 @@
 .pm-paid{background:rgba(255,214,0,.08);color:var(--yellow);border-radius:4px;padding:1px 6px;font-size:.84rem;}
 
 /* Byte tip */
-.byte-tip-card{background:linear-gradient(135deg,rgba(0,255,136,.04),rgba(0,229,255,.03));border:1px solid rgba(0,255,136,.18);border-radius:14px;padding:18px;}
+.byte-tip-card{background:linear-gradient(135deg,rgba(0,255,136,.04),rgba(0,255,136,.02));border:1px solid rgba(0,255,136,.18);border-radius:14px;padding:18px;}
 .byte-tip-head{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
 .byte-mini{width:34px;height:34px;border-radius:8px;background:var(--bg-panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
 .byte-name{font-family:'Orbitron',sans-serif;font-size:.84rem;color:var(--green);letter-spacing:1px;}
@@ -100,6 +100,24 @@
 
 /* ── STEP 3: QUIZ ─────────────────────── */
 .quiz-wrap{max-width:680px;}
+.quiz-prog-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .93rem;
+  color: var(--cyan);
+  background: var(--bg-panel);
+  border: 1.5px solid var(--cyan);
+  border-radius: 10px;
+  margin-bottom: 18px;
+  margin-top: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  padding: 10px 18px 8px 18px;
+  box-shadow: 0 2px 12px rgba(96,200,240,.10);
+  z-index: 10;
+  position: relative;
+}
 .quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:7px;overflow:hidden;border:1px solid var(--border);}
 .quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:50px;transition:width .5s ease;}
 .quiz-prog-label{display:flex;justify-content:space-between;font-size:.76rem;color:var(--text-dim);margin-bottom:22px;font-family:'Orbitron',sans-serif;}
@@ -508,8 +526,8 @@ byte-fb{display:none;margin-top:18px;background:linear-gradient(135deg,rgba(0,25
     <!-- ══ STEP 3: QUIZ ════════════════════ -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
         <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
-        <div class="quiz-prog-label"><span id="q-label"></span><span id="q-score"></span></div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -657,7 +675,7 @@ window.moduleQuestions = [
   {
     q: "Aynı şifreyi birden fazla hesapta kullanmanın doğurduğu en büyük risk aşağıdakilerden hangisidir?",
     opts: [
-      "Bir site ihlal edilirse o şifreyi kullanan TUM hesaplarınızın tehlikeye girmesidir.",
+      "Bir site ihlal edilirse o şifreyi kullanan TÜM hesaplarınızın tehlikeye girmesidir.",
       "Şifrenin çok uzun süre değişmemesi durumunda sistemin otomatik erişim engellemesidir.",
       "Çok fazla hesapta aynı veri girildiği için tarayıcı belleklerinde teknik hata olmasıdır.",
       "Şifrenin karakter yapısının zamanla eski kalması ve yeni algoritmalara uymamasıdır."
@@ -708,7 +726,7 @@ window.moduleQuestions = [
     correct: 1,
     fb: {
       wrong: "Passphrase'in avantajı kısalık ya da dil değil uzunluk ve tahmin edilemezlik dengesidir. Amaç hem güçlü hem hatırlanabilir bir parola üretmektir.",
-      correct: "Aynen! Uzun ve anlamlı kelime kombinasyonları, kısa karmaşık şifrelere göre daha yüksek entropi sunarken kullanımı da kolaylaştırır."
+      correct: "Aynen! Uzun ve anlamlı kelime kombinasyonları, kısa karmaşık şifrelerine göre daha yüksek entropi sunarken kullanımı da kolaylaştırır."
     }
   },
   {

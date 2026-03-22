@@ -97,6 +97,7 @@
 
 /* ── STEP 3: QUIZ ── */
 .quiz-wrap{max-width:680px;}
+.quiz-prog-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:18px;font-family:'Orbitron',sans-serif;}
 .quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:7px;overflow:hidden;border:1px solid var(--border);}
 .quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--green));border-radius:50px;transition:width .6s ease;}
 .quiz-prog-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:18px;font-family:'Orbitron',sans-serif;}
@@ -562,11 +563,8 @@
     <!-- ─────── PANEL 3: QUIZ ─────── -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label">
-          <span id="q-counter">Soru 1 / 10</span>
-          <span id="q-score"></span>
-        </div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -776,7 +774,7 @@ window.moduleQuestions = [
     q: "Uygulama mağazasından (Google Play veya App Store) yeni bir uygulama indirmeden önce güvenliği nasıl teyit edersiniz?",
     opts: [
       "Uygulamanın isminin popülerliği, logosu ve mağaza sayfasındaki profesyonel görünümlü tanıtım görsellerine odaklanarak karar verirsiniz.",
-      "Geliştiricinin kimliğini, indirme istatistiklerini, kullanıcı geri bildirimlerini ve uygulamanın talep ettiği erişim izinlerini detaylıca incelersiniz.",
+      "Geliştiriciyi kontrol etmek için uygulamanın ismi, indirme istatistikleri ve kullanıcı geri bildirimleriyle ilgili detaylıca incelersiniz.",
       "Uygulamanın tamamen ücretsiz olup olmadığını kontrol edersiniz; ücretli olmayan uygulamaların genellikle daha güvenli ve denetlenmiş olduğunu varsayarsınız.",
       "Sadece uygulamanın aldığı toplam yıldız puanına bakarsınız; yüksek puana sahip uygulamaların siber güvenlik riski taşımayacağını kabul edersiniz."
     ],
@@ -876,6 +874,24 @@ function startVideo(){
 
 
 
+// Quiz paneli görünür olduğunda otomatik başlat (MutationObserver ile)
+document.addEventListener('DOMContentLoaded', function() {
+  var quizPanel = document.getElementById('panel-3');
+  if (!quizPanel) return;
+  // İlk yüklemede aktifse
+  if (quizPanel.classList.contains('active') && typeof renderQuestion === 'function') {
+    renderQuestion();
+  }
+  // Panelin aktifliğini izleyelim
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      if (m.attributeName === 'class' && quizPanel.classList.contains('active')) {
+        if (typeof renderQuestion === 'function') renderQuestion();
+      }
+    });
+  });
+  observer.observe(quizPanel, { attributes: true });
+});
 </script>
 <script src="js/app.js"></script>
 </body>

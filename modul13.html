@@ -74,10 +74,32 @@
 .byte-tip-card{background:linear-gradient(135deg,rgba(96,200,240,.06),rgba(96,200,240,.02));border:1px solid rgba(96,200,240,.2);border-radius:14px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;margin-top:20px;}
 .byte-tip-text{font-size:.86rem;color:var(--text-dim);line-height:1.6;}
 /* QUIZ */
-.quiz-wrap{max-width:700px;}
-.quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:8px;overflow:hidden;border:1px solid var(--border);}
-.quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:50px;transition:width .5s ease;}
-.quiz-prog-label{display:flex;justify-content:space-between;font-size:.82rem;color:var(--text-dim);margin-bottom:22px;font-family:'Orbitron',sans-serif;}
+.quiz-wrap{
+  display:block;
+  margin-bottom:18px;
+}
+.quiz-prog-bar{
+  background:var(--bg-panel);
+  border-radius:50px;
+  height:7px;
+  margin-bottom:8px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.quiz-prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  border-radius:50px;
+  transition:width .5s ease;
+}
+.quiz-prog-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:.82rem;
+  color:var(--text-dim);
+  margin-bottom:22px;
+  font-family:'Orbitron',sans-serif;
+}
 .question-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:18px;}
 .question-num{font-family:'Orbitron',sans-serif;font-size:.77rem;color:var(--cyan);letter-spacing:2px;margin-bottom:9px;}
 .question-text{font-size:1.08rem;color:#fff;font-weight:600;line-height:1.5;margin-bottom:18px;}
@@ -273,7 +295,7 @@
         <div class="article-card">
           <div class="article-tag">ENISA · EUROPOL · AB YASALARI</div>
           <div class="article-title">Siber Zorbalık: Tanı, Hisset, Durdur</div>
-          <div class="article-intro">Bir kişiyi dijital ortamda defalarca rahatsız etmek, aşağılamak veya dışlamak — bu siber zorbalıktır. Tek bir kaba yorum zorbalık sayılmayabilir; ama arkasından gelen sessizlik, dışlama ve tekrar kesinlikle zorbalıktır.</div>
+          <div class="article-intro">Bir kişiyi dijital ortamda defalarca rahatsız etmek, aşağılamak veya dışlamak — bu siber zorbalıkdır. Tek bir kaba yorum zorbalık sayılmayabilir; ama arkasından gelen sessizlik, dışlama ve tekrar kesinlikle zorbalıkdır.</div>
 
           <div class="section-head">📊 RAKAMLAR NE SÖYLÜYOR?</div>
           <div class="stat-row">
@@ -501,8 +523,8 @@
     <!-- PANEL 3: QUIZ -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:0%"></div></div>
-        <div class="quiz-prog-label"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-label" style="margin-bottom: 8px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -544,7 +566,7 @@
             <div class="chat-avatar av-can">C</div>
             <div>
               <div class="chat-name cn-can">CAN</div>
-              <div class="chat-bubble bubble-can">Telefona bakıyorum... mesajları okuyorum... kimsenin "bu yanlış" dememesi... bu bazen zorbalığın kendisinden daha ağır geliyor. 💔</div>
+              <div class="chat-bubble bubble-can">Telefona bakıyorum... mesajları okumadan duramadım. Sabaha kadar.</div>
             </div>
           </div>
 
@@ -850,23 +872,43 @@ window.moduleQuestions = [
 ];
 
 function renderQuestion() {
+    // Quiz gösterge satırını quiz-wrap'ın en üstüne tekrar ekle ve görünür yap
+    var quizWrap = document.querySelector('.quiz-wrap');
+    if (quizWrap) {
+      let progLabel = quizWrap.querySelector('.quiz-prog-label');
+      if (!progLabel) {
+        progLabel = document.createElement('div');
+        progLabel.className = 'quiz-prog-label';
+        progLabel.innerHTML = '<span id="q-label"></span><span id="q-score"></span>';
+        quizWrap.insertBefore(progLabel, quizWrap.firstChild);
+      }
+      progLabel.style.display = 'flex';
+    }
+  // Ortak JS ile uyumlu şekilde güncelle
+  if (typeof window.renderQuestionGlobal === 'function') {
+    window.renderQuestionGlobal();
+    return;
+  }
+  // Eğer ortak fonksiyon yoksa, eski davranış (geri uyumluluk)
   if (moduleCurrentQ>=window.moduleQuestions.length){showQuizResult();return;}
   moduleQuizAnswered=false;
   const q=window.moduleQuestions[moduleCurrentQ];
   prepareModuleQuestion(q);
   const displayOpts=Array.isArray(q._displayOpts)?q._displayOpts:q.opts;
-  document.getElementById('qprog').style.width=(moduleCurrentQ/window.moduleQuestions.length*100)+'%';
-  document.getElementById('q-label').textContent='Soru '+(moduleCurrentQ+1)+' / '+window.moduleQuestions.length;
-  document.getElementById('q-score').textContent=moduleQuizCorrect+' / '+window.moduleQuestions.length+' Doğru';
   const L=['A','B','C','D'];
   document.getElementById('quiz-area').innerHTML=`
     <div class="question-card">
-      <div class="question-num">SORU ${moduleCurrentQ+1} / ${window.moduleQuestions.length}</div>
+      <div class="question-num">SORU ${moduleCurrentQ+1}</div>
       <div class="question-text">${q.q}</div>
       <div class="options">${displayOpts.map((o,i)=>`<button class="option-btn" id="opt-${i}" onclick="answerQ(${i})"><div class="option-letter">${L[i]}</div><span>${o}</span></button>`).join('')}</div>
       <div class="feedback-box" id="fb-box"></div>
     </div>
     <div class="quiz-actions"><button class="btn btn-primary" id="nqb" style="display:none" onclick="nextQuestion()">${moduleCurrentQ<window.moduleQuestions.length-1?'Sonraki Soru →':'Sonucu Gör →'}</button></div>`;
+  // Sadece quiz-prog-label içeriğini JS ana fonksiyonundan güncelle
+  const qLabel = document.getElementById('q-label');
+  const qScore = document.getElementById('q-score');
+  if (qLabel) qLabel.textContent = 'Soru ' + (moduleCurrentQ + 1) + ' / ' + window.moduleQuestions.length;
+  if (qScore) qScore.textContent = moduleQuizCorrect + ' / ' + moduleCurrentQ + ' Doğru';
 }
 
 function answerQ(i) {

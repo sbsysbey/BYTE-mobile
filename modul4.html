@@ -99,29 +99,7 @@
 .side-item strong{color:var(--text);}
 .si-dot{color:var(--purple);flex-shrink:0;}
 
-/* ── QUIZ ── */
-.quiz-wrap{max-width:680px;}
-.quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:7px;overflow:hidden;border:1px solid var(--border);}
-.quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:50px;transition:width .6s ease;}
-.quiz-prog-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:18px;font-family:'Orbitron',sans-serif;}
-.question-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:16px;}
-.question-num{font-family:'Orbitron',sans-serif;font-size:.81rem;color:var(--purple);letter-spacing:2px;margin-bottom:10px;}
-.question-text{font-size:.95rem;color:#fff;font-weight:600;line-height:1.5;margin-bottom:18px;}
-.options{display:flex;flex-direction:column;gap:9px;}
-.option-btn{background:var(--bg-panel);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:13px 16px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:.2s;text-align:left;width:100%;color:var(--text-dim);font-size:.91rem;font-family:'Exo 2',sans-serif;}
-.option-btn:hover{background:rgba(192,132,252,.05);border-color:rgba(192,132,252,.25);color:#fff;}
-.option-btn.correct{background:rgba(74,222,154,.09);border-color:var(--green);color:var(--green);}
-.option-btn.wrong{background:rgba(248,113,113,.09);border-color:var(--red);color:var(--red);}
-.option-btn:disabled{cursor:default;}
-.option-btn span{display:block;line-height:1.45;overflow-wrap:anywhere;word-break:break-word;}
-.option-letter{width:24px;height:24px;border-radius:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:.68rem;font-weight:700;flex-shrink:0;transition:.2s;}
-.option-btn.correct .option-letter{background:rgba(74,222,154,.18);border-color:var(--green);color:var(--green);}
-.option-btn.wrong .option-letter{background:rgba(248,113,113,.18);border-color:var(--red);color:var(--red);}
-.feedback-box{border-radius:9px;padding:11px 15px;font-size:.87rem;line-height:1.5;margin-top:11px;display:none;}
-.feedback-box.correct{background:rgba(74,222,154,.07);border:1px solid rgba(74,222,154,.25);color:var(--green);}
-.feedback-box.wrong{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.25);color:var(--red);}
-.feedback-box.show{display:block;animation:fadeUp .3s ease;}
-.quiz-actions{display:flex;justify-content:flex-end;}
+
 
 
 </style>
@@ -397,7 +375,7 @@
                 </div>
                 <div class="tc-desc">"Evden çalış, günde €50-100 kazan, sadece para transferi yap." Aslında seni kara para aklamanın aracı yapıyorlar. Hesabına para geliyor, sen de başkasına gönderiyor ama çalıntı para aklıyorsun — hem mağdur hem suça ortak oluyorsun.</div>
                 <div class="tc-example">Hukuki risk: AB ülkelerinde "money mule" (para katırı) olarak kullanılmak suç sayılır. Banka hesabın kalıcı kapatılabilir, savcılığa sevk edilebilirsin.</div>
-                <div class="tc-rule">✅ <span>Kolay para yoktur. Başkasının parasını iletmeni isteyen her teklifi reddet.</span></div>
+                <div class="tc-rule">✅ <span>Kolay para yoktur. Başkasının parasını iletme (money mule)</span></div>
               </div>
             </div>
           </div>
@@ -476,7 +454,7 @@
                 <div class="trig-icon">🤝</div>
                 <div class="trig-name">Güven</div>
                 <div class="trig-desc">Tanıdık bir isim, logo veya numara kullanmak. "Arkadaşın Kerem gönderdi." Ele geçirilmiş hesaplar bu yüzden tehlikelidir.</div>
-                <div class="trig-ex">"Tanıdıktan gelse de bağımsız doğrula."</div>
+                <div class="trig-ex">"Tanıduction gelse de bağımsız doğrula."</div>
               </div>
               <div class="trigger-card">
                 <div class="trig-icon">🔄</div>
@@ -557,11 +535,8 @@
     <!-- ───── PANEL 3: QUIZ ───── -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label">
-          <span id="q-counter">Soru 1 / 10</span>
-          <span id="q-score"></span>
-        </div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>

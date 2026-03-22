@@ -265,7 +265,7 @@
       <div class="key-points">
         <div class="kp-head"><span>🎯</span><span class="kp-title">VİDEODAN ANAHTAR NOKTALAR</span></div>
         <ul class="kp-list">
-          <li><span class="kp-b">▸</span>E2EE mesajı yolda korur — ama telefona ulaşınca cihazdaki mesaj tamamen açık halde birikmeye devam eder</li>
+          <li><span class="kp-b">▸</span>E2EE mesajı yolda korur — ama telefonda hâlâ duruyor. Metaverin gidiyor. BYTE ile gerçek güvenliğin 3 katmanını öğren.</li>
           <li><span class="kp-b">▸</span>Metaveri: içerik şifreli olsa bile "kiminle, ne zaman, kaç kez" bilgisi toplanmaya devam eder — WhatsApp bunu Meta'ya aktarır</li>
           <li><span class="kp-b">▸</span>Signal ve Threema: hem içerik hem metaveri koruması sağlar, telefon numarası zorunlu değil (Threema)</li>
           <li><span class="kp-b">▸</span>Süreli mesaj = mesaj okunur, belirlenen süre sonra hem gönderenden hem alıcıdan silinir — en pratik çözüm</li>
@@ -291,7 +291,7 @@
               <div style="flex:1;">
                 <div class="layer-num">KATMAN 1</div>
                 <div class="layer-title">Transit Şifreleme (E2EE)</div>
-                <div class="layer-desc">Mesaj gönderilirken şifrelidir. Yalnızca gönderen ve alıcı okuyabilir. WhatsApp, Signal, Threema, Wire — hepsi bunu sağlar.</div>
+                <div class="layer-desc">Mesaj gönderilirken şifreli dir. Yalnızca gönderen ve alıcı okuyabilir. WhatsApp, Signal, Threema, Wire — hepsi bunu sağlar.</div>
                 <div class="layer-status ls-green">✓ Çoğu uygulama sağlıyor</div>
               </div>
             </div>
@@ -311,7 +311,7 @@
               <div style="flex:1;">
                 <div class="layer-num">KATMAN 3</div>
                 <div class="layer-title">Cihazda Depolama Kontrolü</div>
-                <div class="layer-desc">Mesaj karşıya güvenli ulaştı — ama telefonda sonsuza kadar duruyor. Telefon ele geçirilirse tüm geçmiş açık. Süreli mesajlar bu riski ortadan kaldırır.</div>
+                <div class="layer-desc">Mesaj karşıya güvenli ulaştı — ama telefonda sonsuza kadar duruyor. Telefon ele geçirilirse tüm geçmiş açık halde birikmeye devam eder. Süreli mesajlar bu riski ortadan kaldırır.</div>
                 <div class="layer-status ls-red">✗ Varsayılan olarak kapalı çoğu uygulamada</div>
               </div>
             </div>
@@ -647,8 +647,8 @@
     <!-- PANEL 3: QUIZ -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label"><span id="q-counter"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -769,7 +769,7 @@ window.moduleQuestions=[
    correct:0,fb:{wrong:"Temel fark içerik şifreleme değil metaveri politikasıdır; Signal bu konuda daha sınırlı veri toplar.",correct:"Doğru! En kritik fark metaveri yaklaşımıdır ve bu gizlilik seviyesini doğrudan etkiler."}},
   {q:"Threema uygulamasını diğer mesajlaşma araçlarından ayıran ve gizliliği artıran en önemli özellik nedir?",
    opts:["Sadece sesli aramalar için geliştirilmiş olması ve yazılı mesajlaşmaya izin vermemesidir.","Gönderilen her mesajın 5 saniye içinde her iki taraftan da kalıcı olarak silinmesidir.","Uygulamanın sadece İsviçre sınırları içerisinde internete bağlıyken çalışıyor olmasıdır.","Mesajların iletilmesi için telefon numarası veya e-posta adresi gerektirmez; anonim ID ile çalışır."],
-   correct:3,fb:{wrong:"Threema'nın ayırt edici yönü anonim kimlik yaklaşımıdır; telefon numarası zorunlu değildir.",correct:"Doğru! Telefon/e-posta zorunluluğu olmadan ID ile çalışması gizlilik avantajı sağlar."}},
+   correct:3,fb:{wrong:"Threema'nın ayırt edici yönü anonim kimlik yaklaşımıdır; telefon numarası zorunlu değildir.",correct:"Doğru! Telefon/e-posta zorunlu değildir; anonim ID ile çalışması gizlilik avantajı sağlar."}},
   {q:"Güvenli iletişimin '3 Katmanlı Koruması' (Transit Şifreleme, Metaveri Koruması, Cihazda Depolama) tam olarak neyi hedefler?",
    opts:["Tüm mesajları bulut sunucularında sınırsız süreyle saklayarak veriye her yerden erişebilmeyi.","Sadece mesajın içeriğini değil; kiminle konuşulduğu bilgisini ve telefonda kalan izleri de korumayı.","Bilgisayara antivirüs kurmayı, güçlü bir şifre belirlemeyi ve düzenli olarak yedek almayı.","İnternet hızını artırmayı, mesajların daha hızlı iletilmesini ve depolama alanından tasarruf etmeyi."],
    correct:1,fb:{wrong:"3 katman yaklaşımı yalnızca içerik şifrelemesini değil, metaveri ve cihaz izlerini de kapsar.",correct:"Kesinlikle! Amaç içerik + metaveri + cihazda kalan izlerin birlikte korunmasıdır."}},
@@ -861,11 +861,27 @@ function prepareModuleQuestion(q){
 
 function renderQuestion(){
   if(moduleCurrentQ>=10){showResult();return;}
+  // Quiz gösterge satırını quiz-wrap'ın en üstüne tekrar ekle ve görünür yap
+  var quizWrap = document.querySelector('.quiz-wrap');
+  if (quizWrap) {
+    let progLabel = quizWrap.querySelector('.quiz-prog-label');
+    if (!progLabel) {
+      progLabel = document.createElement('div');
+      progLabel.className = 'quiz-prog-label';
+      progLabel.innerHTML = '<span id="q-label"></span><span id="q-score"></span>';
+      quizWrap.insertBefore(progLabel, quizWrap.firstChild);
+    }
+    progLabel.style.display = 'flex';
+  }
   const q=window.moduleQuestions[moduleCurrentQ];moduleQuizAnswered=false;
   prepareModuleQuestion(q);
   const displayOpts=Array.isArray(q._displayOpts)?q._displayOpts:q.opts;
   document.getElementById('qprog').style.width=((moduleCurrentQ+1)/10*100)+'%';
-  document.getElementById('q-counter').textContent='Soru '+(moduleCurrentQ+1)+' / 10';
+  // quiz-prog-label içeriğini güncelle
+  const qLabel = document.getElementById('q-label');
+  const qScore = document.getElementById('q-score');
+  if (qLabel) qLabel.textContent = 'Soru '+(moduleCurrentQ+1)+' / 10';
+  if (qScore) qScore.textContent = moduleQuizCorrect+' / '+moduleCurrentQ+' Doğru';
   const L=['A','B','C','D'];
   document.getElementById('quiz-area').innerHTML=`
     <div class="question-card">

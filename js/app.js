@@ -780,6 +780,28 @@ function setChapter(el, title, time) {
 // QUIZ YÖNETİMİ
 // ──────────────────────────────────────────────────────────────
 function renderQuestion() {
+    // DEBUG: renderQuestion çağrıldı mı?
+    console.log('[DEBUG] renderQuestion çağrıldı');
+    // Quiz gösterge satırını quiz-wrap'ın en üstüne tekrar ekle ve görünür yap
+    var quizWrap = document.querySelector('.quiz-wrap');
+    if (quizWrap) {
+      let progLabel = quizWrap.querySelector('.quiz-prog-label');
+      if (!progLabel) {
+        progLabel = document.createElement('div');
+        progLabel.className = 'quiz-prog-label';
+        progLabel.innerHTML = '<span id="q-label"></span><span id="q-score"></span>';
+        quizWrap.insertBefore(progLabel, quizWrap.firstChild);
+      }
+      // Stil zorlaması ve debug
+      progLabel.style.display = 'flex';
+      progLabel.style.visibility = 'visible';
+      progLabel.style.opacity = '1';
+      progLabel.style.background = '#2d4166';
+      progLabel.style.color = '#60c8f0';
+      progLabel.style.border = '2px solid #60c8f0';
+      progLabel.style.zIndex = '1000';
+      console.log('[DEBUG] quiz-prog-label görünür yapıldı', progLabel);
+    }
   const quizQuestions = getModuleQuestions();
   if (!Array.isArray(quizQuestions) || quizQuestions.length === 0) return;
 
@@ -793,13 +815,13 @@ function renderQuestion() {
   const displayOpts = Array.isArray(q._displayOpts) ? q._displayOpts : q.opts;
   answered = false;
   
-  const quizFill = document.getElementById('quiz-fill') || document.getElementById('qprog');
+  // Gösterge satırını sadece güncelle
   const qLabel = document.getElementById('q-label');
   const qScore = document.getElementById('q-score');
-  
-  if (quizFill) quizFill.style.width = ((currentQ + 1) / quizQuestions.length * 100) + '%';
   if (qLabel) qLabel.textContent = 'Soru ' + (currentQ + 1) + ' / ' + quizQuestions.length;
   if (qScore) qScore.textContent = quizCorrect + ' / ' + answeredCount + ' Doğru';
+  const quizFill = document.getElementById('quiz-fill') || document.getElementById('qprog');
+  if (quizFill) quizFill.style.width = ((currentQ + 1) / quizQuestions.length * 100) + '%';
   
   const L = ['A', 'B', 'C', 'D'];
   const quizArea = document.getElementById('quiz-area');
@@ -868,6 +890,23 @@ function nextQuestion() {
   currentQ++;
   if (currentQ < quizQuestions.length) {
     renderQuestion();
+    // Her soru geçişinde quiz-prog-label stilini tekrar zorla ayarla
+    setTimeout(function() {
+      var quizWrap = document.querySelector('.quiz-wrap');
+      if (quizWrap) {
+        var progLabel = quizWrap.querySelector('.quiz-prog-label');
+        if (progLabel) {
+          progLabel.style.display = 'flex';
+          progLabel.style.visibility = 'visible';
+          progLabel.style.opacity = '1';
+          progLabel.style.background = '#2d4166';
+          progLabel.style.color = '#60c8f0';
+          progLabel.style.border = '2px solid #60c8f0';
+          progLabel.style.zIndex = '1000';
+          console.log('[DEBUG] nextQuestion sonrası quiz-prog-label görünür', progLabel);
+        }
+      }
+    }, 0);
     scrollToQuizQuestionTop();
   } else {
     showResult();
@@ -879,17 +918,23 @@ function nextQ() {
 }
 
 function scrollToQuizQuestionTop() {
-  const quizArea = document.getElementById('quiz-area') || document.getElementById('q-area');
-  if (!quizArea) return;
-
-  const target = quizArea.querySelector('.question-card') || quizArea;
-  const topOffset = 84;
-  const top = window.pageYOffset + target.getBoundingClientRect().top - topOffset;
-
-  window.scrollTo({
-    top: Math.max(0, top),
-    behavior: 'auto'
-  });
+  // quiz-prog-label'ı ekranın en üstüne ve görünür şekilde getir
+  const progLabel = document.querySelector('.quiz-prog-label');
+  if (!progLabel) return;
+  // Eğer sticky/fixed bir topbar varsa offset uygula
+  const topbar = document.getElementById('topbar');
+  let offset = 0;
+  if (topbar) {
+    const style = window.getComputedStyle(topbar);
+    offset = topbar.offsetHeight || 0;
+    if (style.position === 'fixed' || style.position === 'sticky') {
+      offset += 4; // ekstra boşluk
+    }
+  }
+  progLabel.scrollIntoView({ behavior: 'auto', block: 'start' });
+  if (offset > 0) {
+    window.scrollBy({ top: -offset, left: 0, behavior: 'auto' });
+  }
 }
 
 function scrollToQuizActionsIfLandscape() {

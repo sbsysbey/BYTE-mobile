@@ -106,10 +106,42 @@
 .side-item strong{color:var(--text);}
 .alert-warn{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.2);border-radius:10px;padding:12px 16px;margin:12px 0;display:flex;gap:10px;font-size:.86rem;line-height:1.55;color:var(--text);}
 /* QUIZ */
-.quiz-wrap{max-width:680px;}
-.quiz-prog-bar{background:var(--bg-panel);border-radius:50px;height:7px;margin-bottom:7px;overflow:hidden;border:1px solid var(--border);}
-.quiz-prog-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:50px;transition:width .6s ease;}
-.quiz-prog-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:18px;font-family:'Orbitron',sans-serif;}
+.quiz-wrap{
+  max-width:680px;
+  margin-bottom:20px;
+  margin-top:20px;
+}
+.quiz-prog-label{
+  margin-bottom: 18px;
+  margin-top: 0;
+  display:flex;
+  justify-content:space-between;
+  font-size:.78rem;
+  color:var(--text-dim);
+  font-family:'Orbitron',sans-serif;
+}
+.quiz-prog-bar{
+  background:var(--bg-panel);
+  border-radius:50px;
+  height:7px;
+  margin-bottom:7px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.quiz-prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--purple),var(--cyan));
+  border-radius:50px;
+  transition:width .6s ease;
+}
+.quiz-prog-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:.78rem;
+  color:var(--text-dim);
+  margin-bottom:18px;
+  font-family:'Orbitron',sans-serif;
+}
 .question-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:16px;}
 .question-num{font-family:'Orbitron',sans-serif;font-size:.81rem;color:var(--purple);letter-spacing:2px;margin-bottom:10px;}
 .question-text{font-size:.95rem;color:#fff;font-weight:600;line-height:1.5;margin-bottom:18px;}
@@ -383,7 +415,7 @@
                 <li><span class="zc-ok">✓</span>Tüm e-posta ve mesajlaşma sekmelerini kapat</li>
                 <li><span class="zc-ok">✓</span>Masaüstündeki dosya isimlerini kontrol et</li>
                 <li><span class="zc-ok">✓</span>Bildirimleri/popup'ları kapat (Odak modu)</li>
-                <li><span class="zc-ok">✓</span>Yalnızca sunum penceresini paylaş, tüm ekranı değil</li>
+                <li><span class="zc-ok">✓</span>Yalnızca sunum penceresini paylaş, tüm ekran değil</li>
                 <li><span class="zc-ok">✓</span>Tarayıcıda açık sekmeleri gözden geçir</li>
               </ul>
             </div>
@@ -490,8 +522,8 @@
     <!-- PANEL 3: QUIZ -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label"><span id="q-counter"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -535,7 +567,7 @@
           <div class="scene-q">🤔 Ne yaparsın?</div>
           <div class="scene-opts" id="scene-opts">
             <button class="scene-opt" onclick="pickScene(0)"><span class="s-icon">⏩</span><span>Hızlıca doğru dosyaya geçersin — kimse fark etmemiştir, sunum devam eder.</span></button>
-            <button class="scene-opt" onclick="pickScene(1)"><span class="s-icon">🛑</span><span>Ekran paylaşımını <strong>hemen durdurursun</strong>, özür dilersin ve yanlış dosyayı kapattıktan sonra doğru dosyayı açıp devam edersin. Sonrasında IT/İK'ya durumu bildirirsin.</span></button>
+            <button class="scene-opt" onclick="pickScene(1)"><span class="s-icon">🛑</span><span>Ekran paylaşımını <strong>hemen durdurursun</strong>, özür dileersin ve yanlış dosyayı kapattıktan sonra doğru dosyayı açıp devam edersin. Sonrasında IT/İK'ya durumu bildirirsin.</span></button>
             <button class="scene-opt" onclick="pickScene(2)"><span class="s-icon">🤐</span><span>Ekranı kapatırsın ama kimseye bir şey söylemezsin — geçip gider.</span></button>
             <button class="scene-opt" onclick="pickScene(3)"><span class="s-icon">😬</span><span>Panikleyip toplantıyı tamamen kapatırsın, bir daha katılmazsın.</span></button>
           </div>

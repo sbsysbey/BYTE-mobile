@@ -341,7 +341,7 @@
             <div class="pw-card">
               <div class="pw-icon">🌐</div>
               <div class="pw-title">Tarayıcıya Kaydetme</div>
-              <div class="pw-text">Sosyal medya şifrelerini tarayıcıya (Chrome, Safari) kaydetme. Tarayıcı senkronize olduğunda şifren buluta da gider. Şifre yöneticisi kullan.</div>
+              <div class="pw-text">Sosyal medya şifrelerini tarayıcıya (Chrome, Safari) kaydetme. Tarayıcı senkronize olduğunda şifre buluta da gider. Şifre yöneticisi kullan.</div>
             </div>
             <div class="pw-card">
               <div class="pw-icon">📱</div>
@@ -543,7 +543,7 @@
             <div class="side-list">
               <div class="side-item"><span class="side-bad">✗</span><div>SMS 2FA kullanmak</div></div>
               <div class="side-item"><span class="side-bad">✗</span><div>DM'den şifre paylaşmak</div></div>
-              <div class="side-item"><span class="side-bad">✗</span><div>Şifreyi tarayıcıya kaydetmek</div></div>
+              <div class="side-item"><span class="side-bad">✗</span><div>Şifrelerini tarayıcıya kaydetmek</div></div>
               <div class="side-item"><span class="side-bad">✗</span><div>Telegram'da normal sohbet (hassas konu)</div></div>
               <div class="side-item"><span class="side-bad">✗</span><div>Her hesapta aynı şifre</div></div>
             </div>
@@ -575,11 +575,8 @@
     <!-- ═══ PANEL 3: QUIZ ═══ -->
     <div class="lesson-panel" id="panel-3">
       <div class="quiz-wrap">
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qprog" style="width:10%"></div></div>
-        <div class="quiz-prog-label">
-          <span id="q-counter"></span>
-          <span id="q-score"></span>
-        </div>
+        <div class="quiz-prog-label" style="margin-bottom: 18px; margin-top: 0;"><span id="q-label"></span><span id="q-score"></span></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="quiz-fill" style="width:20%"></div></div>
         <div id="quiz-area"></div>
       </div>
     </div>
@@ -661,7 +658,7 @@ function byteSpeak(){
   window.speechSynthesis.cancel();
   const av=document.getElementById('byteAvatar');
   const ut=new SpeechSynthesisUtterance(
-    'Modül on iki. Sosyal Medya Güvenliği. Gençlerin en çok hedef alındığı alan burasıdır. Sosyal medya hesapları nasıl ele geçirilir? Beş adım: Saldırgan önce seni araştırır, sonra sızdırılmış veritabanlarından şifreni bulur, sonra giriş dener, iki faktörlü doğrulamayı bypass eder ve seni kendi hesabından kilitler. Bu zincirin en zayıf halkası SMS ile gelen doğrulama kodu. Türkiye özelinde SIM bypass gerçek bir tehdit — Türkiye hattı SMS iki faktörlü doğrulama için yeterince güvenli değil. Çözüm: Google Authenticator veya Authy kullan. Ve unutma: WhatsApp mesajı şifre paylaşmak için asla güvenli değil.'
+    'Modül on iki. Sosyal Medya Güvenliği. Gençlerin en çok hedef alındığı alan burasıdır. Sosyal medya hesapları nasıl ele geçirilir? Beş adım: Saldırgan önce seni araştırır, sonra sızdırılmış veritabanlarından şifreni bulur, sonra giriş dener, iki faktörlü doğrulama yapar ve seni kendi hesabından kilitler. Bu zincirin en zayıf halkası SMS ile gelen doğrulama kodu. Türkiye özelinde SIM bypass gerçek bir tehdit — Türkiye hattı SMS iki faktörlü doğrulama için yeterince güvenli değil. Çözüm: Google Authenticator veya Authy kullan. Ve unutma: WhatsApp mesajı şifre paylaşmak için asla güvenli değil.'
   );
   ut.lang='tr-TR';ut.rate=0.91;ut.pitch=1.04;
   const voices=window.speechSynthesis.getVoices();
@@ -705,7 +702,7 @@ window.moduleQuestions=[
    opts:["Sosyal medya hesaplarını sadece gece saatlerinde kullanmalarını söylemek.","Bilmedikleri her uygulama için yeni bir hesap açmalarını önermek.","Şifrelerini bir yere not edip telefonun arkasına yapıştırmalarını istemek.","Gelen şüpheli mesajlardaki bağlantılara tıklamadan önce mutlaka bir yakınına danışmalarını ve kimseyle şifre paylaşmamalarını sağlamak."],
    correct:3,fb:{wrong:"Yaş fark etmeksizin en etkili koruma kuralı: şüpheli bağlantılarda durmak, doğrulamak ve asla şifre paylaşmamaktır.",correct:"Doğru! Basit bir doğrulama alışkanlığı, sosyal mühendislik saldırılarının büyük kısmını engeller."}},
   {q:"'YAPILMASI GEREKENLER' listesinde yer alan 'Kullanmadığınız hesapları silin' tavsiyesi dijital güvenliğinizi nasıl artırır?",
-   opts:["İnternet üzerindeki toplam verinizi artırarak saldırganların kafasını karıştırır.","Sadece telefonunuzun uygulama menüsünün daha düzenli görünmesini sağlar.","Saldırı yüzeyinizi daraltır; unutulmuş eski bir hesabın ihlal edilmesiyle diğer hesaplarınıza ulaşılabilecek bir sızıntı riskini ortadan kaldırır.","Silinen hesaplar sayesinde internet hızınızın tüm cihazlarda kalıcı olarak artmasını sağlar."],
+   opts:["İnternet üzerindeki toplam verinizi artırarak saldırganların kafasını karıştırır.","Sadece telefonunuzun uygulama menüsünün daha düzenli görünmesini sağlar.","Saldırı yüzeyinizi daraltır; unutulmuş eski bir hesapların ihlal edilmesiyle diğer hesaplarınıza ulaşılabilecek bir sızıntı riskini ortadan kaldırır.","Silinen hesaplar sayesinde internet hızınızın tüm cihazlarda kalıcı olarak artmasını sağlar."],
    correct:2,fb:{wrong:"Eski ve kullanılmayan hesaplar saldırganlar için kolay hedef olur. Hesap azaltmak, ihlal zinciri riskini düşürür.",correct:"Doğru! Kullanılmayan hesapları kapatmak saldırı yüzeyini küçültür ve unutulmuş hesaplardan doğabilecek sızıntıları engeller."}}
 ];
 
