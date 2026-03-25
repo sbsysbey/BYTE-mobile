@@ -93,16 +93,16 @@ const MODULES = [
   { n:1,  name:'Şifre Güvenliği',  icon:'🔑',  xp:300,  file:'modul1.html',  badge:'ŞİFRE EFENDİSİ',  bicon:'🔐' },
   { n:2,  name:'Ağ Güvenliği',       icon:'🌐',  xp:350,  file:'modul2.html',  badge:'AĞ KORUYUCU',      bicon:'🌐' },
   { n:3,  name:'Mobil Güvenlik',     icon:'📲', xp:400,  file:'modul3.html',  badge:'MOBİL KORUYUCU',    bicon:'📱' },
-  { n:4,  name:'Sosyal Mühendislik', icon:'🎭',  xp:350,  file:'modul4.html',  badge:'İKNA KALKANI',         bicon:'🎭' },
+  { n:4,  name:'Sosyal Mühendislik', icon:'🎭',  xp:350,  file:'modul4.html',  badge:'TUZAK KIRICI ',         bicon:'🎭' },
   { n:5,  name:'Phishing & Zararlı Yazılımlar',   icon:'🎣',  xp:300,  file:'modul5.html',  badge:'PHİSHİNG AVCISI',        bicon:'🎣' },
   { n:6,  name:'Veri Gizliliği & Bulut',        icon:'☁️',  xp:400,  file:'modul6.html',  badge:'VERİ BEKÇİSİ',     bicon:'🔏' },
-  { n:7,  name:'Sunum Güvenliği',    icon:'🎤',  xp:450,  file:'modul7.html',  badge:'GÜVENLİ SUNUMCU',        bicon:'🖥️' },
-  { n:8,  name:'Güvenli İletişim',     icon:'📡',  xp:350,  file:'modul8.html',  badge:'GÜVENLİ KANAL',       bicon:'📡' },
+  { n:7,  name:'Sunum Güvenliği',    icon:'🎤',  xp:450,  file:'modul7.html',  badge:'GÜVENLİ SUNUCU',        bicon:'🖥️' },
+  { n:8,  name:'Güvenli İletişim',     icon:'📡',  xp:350,  file:'modul8.html',  badge:'İLETİŞİM UZMANI',       bicon:'📡' },
   { n:9,  name:'Hesap & Platform Güvenliği',        icon:'🪪',  xp:500,  file:'modul9.html',  badge:'HESAP KALKANI',     bicon:'🪪' },
   { n:10, name:'Seyahat Güvenliği',        icon:'✈️',  xp:400,  file:'modul10.html', badge:'SEYAHAT KALKANI',    bicon:'✈️' },
   { n:11,  name:'Yapay Zeka Güvenliği',  icon:'🤖',  xp:300,  file:'modul11.html',  badge:'AI KALKANI',  bicon:'🛡️' },
   { n:12,  name:'Sosyal Medya Güvenliği',  icon:'📸',  xp:400,  file:'modul12.html',  badge:'SOSYAL KALKAN',  bicon:'📸' },
-  { n:13,  name:'Siber Zorbalık',  icon:'💬',  xp:300,  file:'modul13.html',  badge:'DİJİTAL CESARET',  bicon:'🦋' },
+  { n:13,  name:'Siber Zorbalık',  icon:'💬',  xp:300,  file:'modul13.html',  badge:'DİJİTAL CESUR',  bicon:'🦋' },
 
 ];
 const TOTAL_XP = 3920;
