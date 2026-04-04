@@ -81,14 +81,14 @@ const MODULE_VIDEO_URLS = {
   1: 'https://youtu.be/SHiMaDUPmzQ',
   2: 'https://youtu.be/gxaz_lfwgvE',
   3: 'https://youtu.be/sNQ83nqk1Dw',
-  4: 'https://youtu.be/mZA-x6Ulwl0',
+  4: 'https://youtu.be/y8z-a5QO8y8',
   5: 'https://youtu.be/90jA5q7n1AY',
   6: 'https://youtu.be/Glr2dJOO-EE',
   7: 'https://youtu.be/UDXudENAJSg',
   8: 'https://youtu.be/uA7EF91QQmM',
   9: 'https://youtu.be/djduU78tqGA',
   10: 'https://youtu.be/CzLPeXujLAM',
-  11: DEFAULT_MODULE_VIDEO_URL,
+  11: 'https://www.youtube.com/embed/RTj7vA3a2BE',
   12: 'https://youtu.be/vhpb8bZdMa4',
   13: 'https://youtu.be/vhpb8bZdMa4'
 };
