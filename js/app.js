@@ -84,7 +84,7 @@ const MODULE_VIDEO_URLS = {
   4: 'https://youtu.be/y8z-a5QO8y8',
   5: 'https://youtu.be/90jA5q7n1AY',
   6: 'https://youtu.be/Glr2dJOO-EE',
-  7: 'https://youtu.be/UDXudENAJSg',
+  7: 'https://youtu.be/mZA-x6Ulwl0',
   8: 'https://youtu.be/uA7EF91QQmM',
   9: 'https://youtu.be/djduU78tqGA',
   10: 'https://youtu.be/CzLPeXujLAM',
@@ -288,10 +288,10 @@ function buildAutoModuleNav() {
       const moduleNum = getCurrentModuleNumber();
       const doneModules = getCompletedModulesSafe();
       const moduleIsDone = doneModules.includes(moduleNum);
-      if (!moduleIsDone && typeof moduleNum === 'number' && !completedSteps.has(5)) {
-        showToast('warn', 'Modül tamamlanmadı', 'Tüm adımları bitirmeden sonraki modüle geçemezsin.');
-        return;
-      }
+      // if (!moduleIsDone && typeof moduleNum === 'number' && !completedSteps.has(5)) {
+      //   showToast('warn', 'Modül tamamlanmadı', 'Tüm adımları bitirmeden sonraki modüle geçemezsin.');
+      //   return;
+      // }
       goTo(target);
     };
     card.onkeydown = function (e) {
@@ -300,10 +300,10 @@ function buildAutoModuleNav() {
         const moduleNum = getCurrentModuleNumber();
         const doneModules = getCompletedModulesSafe();
         const moduleIsDone = doneModules.includes(moduleNum);
-        if (!moduleIsDone && typeof moduleNum === 'number' && !completedSteps.has(5)) {
-          showToast('warn', 'Modül tamamlanmadı', 'Tüm adımları bitirmeden sonraki modüle geçemezsin.');
-          return;
-        }
+        // if (!moduleIsDone && typeof moduleNum === 'number' && !completedSteps.has(5)) {
+        //   showToast('warn', 'Modül tamamlanmadı', 'Tüm adımları bitirmeden sonraki modüle geçemezsin.');
+        //   return;
+        // }
         goTo(target);
       }
     };
@@ -1263,11 +1263,11 @@ function sidebarClick(n) {
     13: 'modul13.html'
   };
   if (n === 2) return;
-  if (done.indexOf(n - 1) !== -1 || n === 1) {
-    window.location.href = files[n];
-  } else {
-    showToast('warn', '🔒 Modül Kilitli', 'Önce önceki modülü tamamla!');
-  }
+  // if (done.indexOf(n - 1) !== -1 || n === 1) {
+  window.location.href = files[n];
+  // } else {
+  //   showToast('warn', '🔒 Modül Kilitli', 'Önce önceki modülü tamamla!');
+  // }
 }
 
 
