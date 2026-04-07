@@ -372,15 +372,8 @@ function normalizeSidebarNavigation() {
     if (!Number.isFinite(modNo) || modNo < 1 || modNo > 13) return;
 
     item.onclick = function () {
-      // Eğer bu modül tamamlandıysa serbest dolaşım
-      const doneModules = getCompletedModulesSafe();
-      if (doneModules.includes(modNo)) {
-        window.location.href = 'modul' + modNo + '.html';
-        return;
-      }
-      if (!openModuleFromSidebar(modNo)) {
-        showToast('warn', '🔒 Kilitli', 'Önceki modülü tamamla.');
-      }
+      // Kısıtlama kaldırıldı: Her modüle doğrudan geçiş serbest
+      window.location.href = 'modul' + modNo + '.html';
     };
   });
 }
