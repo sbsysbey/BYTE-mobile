@@ -56,7 +56,7 @@ let rewardedQuizQuestions = new Set();
 
 const MODULE_NAMES = {
   1: 'Şifre Güvenliği',
-  2: 'Ağ Güvenliği',
+  2: 'İnternet Bağlantı Güvenliği',
   3: 'Mobil Güvenlik',
   4: 'Sosyal Mühendislik',
   5: 'Phishing & Zararlı Yazılımlar',
@@ -1098,7 +1098,7 @@ function byteSpeak() {
 
   const moduleTextById = {
     1: 'Modül bir. Siber güvenliğe giriş. Dijital tehditleri tanıyacak ve güvenli davranışın temelini öğreneceksin.',
-    2: 'Modül iki. Ağ güvenliği. Açık Wi-Fi riskleri, Evil Twin saldırıları ve güvenli bağlantı adımlarını öğreneceksin.',
+    2: 'Modül iki. İnternet Bağlantı Güvenliği. Açık Wi-Fi riskleri, Evil Twin saldırıları ve güvenli bağlantı adımlarını öğreneceksin.',
     3: 'Modül üç. Mobil güvenlik. Uygulama izinleri, smishing saldırıları ve çalınan cihaz senaryolarında doğru adımları göreceksin.',
     4: 'Modül dört. Sosyal mühendislik. Kimlik taklidi, aciliyet tuzakları ve psikolojik manipülasyona karşı savunmayı öğreneceksin.',
     5: 'Modül beş. Phishing ve zararlı yazılımlar. Sahte bağlantıları ayırt edip cihazını kötü amaçlı yazılımlardan korumayı öğreneceksin.',

@@ -91,7 +91,7 @@ function showErr(el, msg) {
 // ── MODULE DEFINITIONS ───────────────────────
 const MODULES = [
   { n:1,  name:'Şifre Güvenliği',  icon:'🔑',  xp:300,  file:'modul1.html',  badge:'ŞİFRE EFENDİSİ',  bicon:'🔐' },
-  { n:2,  name:'Ağ Güvenliği',       icon:'🌐',  xp:350,  file:'modul2.html',  badge:'AĞ KORUYUCU',      bicon:'🌐' },
+  { n:2,  name:'İnternet Bağlantı Güvenliği',       icon:'🌐',  xp:350,  file:'modul2.html',  badge:'AĞ KORUYUCU',      bicon:'🌐' },
   { n:3,  name:'Mobil Güvenlik',     icon:'📲', xp:400,  file:'modul3.html',  badge:'MOBİL KORUYUCU',    bicon:'📱' },
   { n:4,  name:'Sosyal Mühendislik', icon:'🎭',  xp:350,  file:'modul4.html',  badge:'TUZAK KIRICI ',         bicon:'🎭' },
   { n:5,  name:'Phishing & Zararlı Yazılımlar',   icon:'🎣',  xp:300,  file:'modul5.html',  badge:'PHİSHİNG AVCISI',        bicon:'🎣' },
